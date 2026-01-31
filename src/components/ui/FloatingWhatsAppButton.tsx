@@ -49,7 +49,7 @@ export const FloatingWhatsAppButton = () => {
 
             {/* Tooltip */}
             <span className="absolute bottom-full right-0 mb-4 
-                       bg-white text-insurance-slate text-[10px] font-black uppercase tracking-[0.2em]
+                       bg-white text-hospital-slate text-[10px] font-black uppercase tracking-[0.2em]
                        px-4 py-2 rounded-full whitespace-nowrap
                        opacity-0 group-hover:opacity-100
                        transition-all duration-300

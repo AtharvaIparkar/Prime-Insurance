@@ -13,8 +13,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = constructMetadata({
-  title: "Securing Your Future | Life, Health & Vehicle Insurance",
-  description: "Prime Insurance Services offers comprehensive insurance solutions in Rajgurunagar, Pune. Trusted advisors for Life, Health, Vehicle, and Property insurance.",
+  title: "Expert Hospital Consultant in India | NABH, NABL & Hospital Planning",
+  description: "Prime Insurance Services provides expert healthcare consultancy in Rajgurunagar, Pune. Leading consultants for NABH, NABL accreditation, TPA empanelment, and hospital operations.",
 });
 
 export default function RootLayout({

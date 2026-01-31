@@ -28,7 +28,7 @@ export const FloatingCallButton = () => {
             className="group flex items-center"
             aria-label="Call Now"
         >
-            <div className="absolute bottom-full right-0 mb-4 bg-white text-insurance-slate px-4 py-2 rounded-full shadow-xl opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none border border-gray-100 uppercase tracking-[0.2em] text-[10px] font-black whitespace-nowrap">
+            <div className="absolute bottom-full right-0 mb-4 bg-white text-hospital-slate px-4 py-2 rounded-full shadow-xl opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none border border-gray-100 uppercase tracking-[0.2em] text-[10px] font-black whitespace-nowrap">
                 Call Now
             </div>
             <div className="w-16 h-16 bg-primary text-secondary rounded-full flex items-center justify-center shadow-[0_15px_30px_rgba(6,182,212,0.4)] hover:scale-110 transition-all duration-300 group-active:scale-95 border-4 border-white">

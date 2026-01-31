@@ -14,52 +14,55 @@ export const Hero = () => {
                 <div className="space-y-8">
                     <div className="inline-flex items-center space-x-2 bg-primary/5 border border-primary/10 px-4 py-2 rounded-full">
                         <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse" />
-                        <span className="text-sm font-semibold text-primary uppercase tracking-wider">🛡️ Your Trusted Partner in Rajgurunagar</span>
+                        <span className="text-sm font-semibold text-primary uppercase tracking-wider">🏥 India&apos;s Leading Hospital Consultant</span>
                     </div>
 
-                    <h1 className="text-5xl md:text-6xl font-extrabold text-insurance-slate leading-[1.1]">
-                        Securing Your <span className="text-primary italic">Future</span> With Expert Care
+                    <h1 className="text-5xl md:text-6xl font-extrabold text-hospital-slate leading-[1.1]">
+                        Hospital & Healthcare <span className="text-primary italic">Consultation</span> Service
                     </h1>
 
-                    <p className="text-xl text-gray-600 leading-relaxed max-w-xl">
-                        Comprehensive insurance solutions for Life, Health, Vehicle, and Property. Serving families and businesses in Rajgurunagar and throughout Pune with trusted advisory.
-                    </p>
+                    <div className="space-y-4">
+                        <p className="text-2xl font-black text-hospital-slate uppercase tracking-tight">Your Trusted Partner in Healthcare Excellence</p>
+                        <p className="text-xl text-gray-700 leading-relaxed max-w-xl italic font-medium">
+                            &quot;Transforming Healthcare, One Hospital at a Time&quot;
+                        </p>
+                    </div>
 
                     <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4">
                         <Link
                             href="/contact"
                             className="w-full sm:w-auto bg-primary text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-primary-dark transition-all shadow-lg hover:shadow-primary/30 text-center"
                         >
-                            Get a Free Quote
+                            Contact Us
                         </Link>
                         <Link
                             href="/services"
-                            className="w-full sm:w-auto bg-white border border-gray-200 text-insurance-slate px-8 py-4 rounded-xl font-bold text-lg hover:border-primary/50 transition-all text-center"
+                            className="w-full sm:w-auto bg-white border border-gray-200 text-hospital-slate px-8 py-4 rounded-xl font-bold text-lg hover:border-primary/50 transition-all text-center"
                         >
-                            View All Plans
+                            Our Services
                         </Link>
                     </div>
 
                     <div className="flex items-center space-x-8 pt-4">
                         <div>
                             <p className="text-3xl font-bold text-primary">
-                                <StatCounter end={1000} suffix="+" />
+                                <StatCounter end={10} suffix="+" />
                             </p>
-                            <p className="text-sm font-medium text-gray-500 uppercase">Families Protected</p>
+                            <p className="text-sm font-medium text-gray-500 uppercase">Years Experience</p>
                         </div>
                         <div className="w-px h-12 bg-gray-200" />
                         <div>
                             <p className="text-3xl font-bold text-primary">
-                                <StatCounter end={15} suffix="+" />
+                                <StatCounter end={50} suffix="+" />
                             </p>
-                            <p className="text-sm font-medium text-gray-500 uppercase">Insurance Partners</p>
+                            <p className="text-sm font-medium text-gray-500 uppercase">Expert Consultants</p>
                         </div>
                     </div>
                 </div>
 
                 <div className="relative hidden lg:block">
                     {/* Enhanced Abstract Visual */}
-                    <div className="aspect-square bg-insurance-slate rounded-[3.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.3)] overflow-hidden border-[12px] border-white/5 relative group">
+                    <div className="aspect-square bg-hospital-slate rounded-[3.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.3)] overflow-hidden border-[12px] border-white/5 relative group">
                         {/* Background Mesh Gradient */}
                         <div className="absolute inset-0 bg-[#111827]" />
                         <div className="absolute top-[-20%] left-[-20%] w-[80%] h-[80%] bg-primary/20 blur-[120px] rounded-full animate-pulse" />
@@ -69,12 +72,12 @@ export const Hero = () => {
                             <div className="relative w-full h-full rounded-[2.5rem] overflow-hidden border-4 border-white/10 shadow-2xl group-hover:scale-105 transition-transform duration-700">
                                 <Image
                                     src="/hero_advisor.png"
-                                    alt="Professional Insurance Advisor"
+                                    alt="Expert Hospital Consultant"
                                     fill
                                     className="object-cover"
                                 />
                                 {/* Glassmorphism Overlay on Image */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-insurance-slate/60 to-transparent" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-hospital-slate/60 to-transparent" />
                             </div>
                         </div>
 
@@ -100,7 +103,7 @@ export const Hero = () => {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                                 </svg>
                             </div>
-                            <p className="font-black text-insurance-slate text-xs uppercase tracking-wider">Verified Advisory</p>
+                            <p className="font-black text-hospital-slate text-xs uppercase tracking-wider">Verified Advisory</p>
                         </div>
                         <div className="h-1 w-full bg-gray-100 rounded-full overflow-hidden">
                             <div className="h-full bg-primary w-[98%]" />

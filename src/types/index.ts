@@ -15,9 +15,18 @@ export interface Service {
   slug: string;
   longDescription?: string;
   bulletPoints?: string[];
+  subService?: boolean;
+  featured?: boolean;
+  image?: string;
+  link: string;
 }
 
 export interface NavLink {
   label: string;
   href: string;
+}
+
+export interface FAQ {
+  question: string;
+  answer: string;
 }

@@ -21,7 +21,7 @@ export function constructMetadata({
     return {
         title: fullTitle,
         description,
-        metadataBase: new URL('https://primeinsuranceservicespune.com'), // Placeholder domain
+        metadataBase: new URL('https://primehospitalsolutions.com'), // Updated placeholder
         alternates: {
             canonical: canonical,
         },

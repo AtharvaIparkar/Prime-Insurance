@@ -1,5 +1,8 @@
 import { ServiceGrid } from "@/components/ui/ServiceGrid";
 import Link from "next/link";
+import React from 'react';
+import { ServiceCard } from '@/components/ui/ServiceCard';
+import { hospitalServices } from '@/constants/services';
 
 export default function ServicesPage() {
     return (
@@ -7,27 +10,29 @@ export default function ServicesPage() {
             <div className="container mx-auto px-4">
                 <div className="max-w-4xl mx-auto text-center mb-16 space-y-4">
                     <h1 className="text-5xl md:text-7xl font-black text-white leading-tight tracking-tighter">Our Insurance <span className="text-primary italic">Solutions</span></h1>
-                    <p className="text-xl text-gray-400 max-w-2xl mx-auto font-medium">
+                    <p className="text-xl text-gray-700 max-w-2xl mx-auto font-medium">
                         From protecting your health to securing your assets, we provide a wide range of insurance products tailored for the residents of Rajgurunagar and Pune.
                     </p>
                 </div>
 
-                <ServiceGrid />
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {hospitalServices.map((service) => (
+                        <ServiceCard key={service.id} service={service} />
+                    ))}
+                </div>
 
-                {/* Call to Action */}
-                <div className="mt-24 bg-insurance-slate rounded-[3rem] p-12 text-white overflow-hidden relative">
-                    <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -mr-32 -mt-32"></div>
-                    <div className="relative z-10 flex flex-col items-center text-center space-y-8">
-                        <h2 className="text-3xl md:text-4xl font-bold">Unsure which plan is right for you?</h2>
-                        <p className="text-gray-400 text-lg max-w-2xl">
-                            Our expert advisors are just a call away. We'll help you compare policies and find the best coverage at the most affordable premium.
+                <div className="mt-24 bg-gray-50 p-12 md:p-20 rounded-[4rem] text-center border border-gray-100">
+                    <div className="max-w-3xl mx-auto space-y-8">
+                        <h3 className="text-3xl font-black text-hospital-slate">Need a Customized Solution?</h3>
+                        <p className="text-lg text-gray-700 font-bold leading-relaxed">
+                            Every healthcare facility has unique challenges. Our consultants are experts at tailoring solutions that fit your specific infrastructure and operational needs.
                         </p>
-                        <div className="flex flex-col sm:flex-row gap-4 w-full justify-center">
-                            <Link href="/contact" className="bg-primary hover:bg-primary-dark text-white px-10 py-4 rounded-xl font-bold transition-all shadow-lg">
-                                Book a Free Consultation
-                            </Link>
-                            <a href="https://wa.me/+917420802527" target="_blank" rel="noopener noreferrer" className="bg-white/10 hover:bg-white/20 text-white px-10 py-4 rounded-xl font-bold transition-all border border-white/10">
-                                Chat with Advisor
+                        <div className="pt-6">
+                            <a
+                                href="/contact"
+                                className="bg-primary text-white px-12 py-5 rounded-2xl font-black uppercase tracking-widest text-sm hover:scale-105 transition-all shadow-[0_20px_40px_rgba(59,130,246,0.3)] inline-block"
+                            >
+                                Book Free Consultation
                             </a>
                         </div>
                     </div>
