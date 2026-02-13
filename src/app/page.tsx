@@ -63,7 +63,7 @@ export default function Home() {
                 <div className="absolute inset-0 bg-primary/10 mix-blend-multiply" />
               </div>
               <div className="absolute -bottom-8 -right-8 bg-primary text-white p-8 rounded-[2.5rem] shadow-2xl max-w-[240px]">
-                <p className="text-4xl font-black mb-2">10+</p>
+                <p className="text-4xl font-black mb-2">7+</p>
                 <p className="text-sm font-black uppercase tracking-widest opacity-90">Years of Operational Excellence</p>
               </div>
             </div>
