@@ -16,9 +16,9 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center mb-16">
             <h3 className="text-primary font-black uppercase tracking-[0.4em] text-sm mb-4">Who We Are</h3>
-            <h2 className="text-4xl md:text-5xl font-black text-hospital-slate uppercase tracking-tighter mb-8">Why Choose Us</h2>
-            <p className="text-lg text-gray-600 leading-relaxed font-medium">
-              Prime Insurance Services is a team of professionals specializing in comprehensive hospital planning and advisory services. Our experts deliver cost-effective and tailored solutions to healthcare providers. As a comprehensive facilitator based in Rajgurunagar, Pune, we are committed to providing end-to-end operational support. We understand the challenges that hospitals face with increasing management complexities and evolving healthcare needs.
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-hospital-slate uppercase tracking-tighter mb-8">Why Choose Us</h2>
+            <p className="text-base sm:text-lg text-gray-600 leading-relaxed font-medium">
+              At Prime Insurance Consultancy, we specialize in Insurance & TPA Cashless Empanelment services for hospitals across India. Our mission is to help healthcare institutions build strong associations with both government and private insurance providers, enabling smooth and efficient cashless treatment facilities for patients.
             </p>
           </div>
 

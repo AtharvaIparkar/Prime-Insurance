@@ -12,9 +12,9 @@ export default function AboutPage() {
 
                 <div className="container mx-auto px-4 relative z-10">
                     <div className="max-w-4xl mx-auto text-center space-y-8">
-                        <h1 className="text-5xl md:text-7xl font-black text-white leading-tight tracking-tighter uppercase">Who We <span className="text-primary italic">Are</span></h1>
-                        <p className="text-xl md:text-2xl text-white/90 leading-relaxed max-w-3xl mx-auto font-bold tracking-tight">
-                            Prime Insurance Services is a team of professionals specializing in comprehensive hospital planning and advisory services.
+                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white leading-tight tracking-tighter uppercase">Who We <span className="text-primary italic">Are</span></h1>
+                        <p className="text-lg sm:text-xl md:text-2xl text-white/90 leading-relaxed max-w-3xl mx-auto font-bold tracking-tight">
+                            At Prime Insurance Consultancy, we specialize in Insurance & TPA Cashless Empanelment services for hospitals across India. Our mission is to help healthcare institutions build strong associations with both government and private insurance providers, enabling smooth and efficient cashless treatment facilities for patients.
                         </p>
                     </div>
                 </div>
@@ -25,12 +25,19 @@ export default function AboutPage() {
                 <div className="container mx-auto px-4">
                     <div className="max-w-4xl mx-auto space-y-16">
 
-                        <div className="space-y-6 text-xl text-gray-700 leading-relaxed font-bold">
+                        <div className="space-y-6 text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed font-bold">
+                            <h2 className="text-2xl sm:text-3xl font-black text-hospital-slate uppercase tracking-tight">Hospital Empanelment with Government & Private Insurance Providers</h2>
                             <p>
-                                Based in Rajgurunagar, Pune, we deliver cost-effective and tailored solutions to healthcare providers. As a comprehensive facilitator, we are committed to providing end-to-end operational support.
+                                We assist hospitals in obtaining empanelment with:
                             </p>
+                            <ul className="list-disc pl-8 space-y-3">
+                                <li>Government health schemes</li>
+                                <li>Public sector insurance companies</li>
+                                <li>Private insurance companies</li>
+                                <li>Third Party Administrators (TPAs)</li>
+                            </ul>
                             <p>
-                                We understand the challenges that hospitals face with increasing management complexities and evolving healthcare needs. Our experts bridge the gap by providing strategic consulting, accreditation support, and IT solutions.
+                                Our team handles the complete empanelment process — from documentation, application submission, follow-ups, compliance requirements, agreement coordination, and final approval — ensuring a hassle-free experience for hospitals.
                             </p>
                         </div>
 
@@ -50,24 +57,32 @@ export default function AboutPage() {
                             </div>
                         </div>
 
-                        {/* Core Values */}
                         <div className="space-y-8 bg-gray-50 p-12 md:p-16 rounded-[3rem] border border-gray-100">
-                            <h2 className="text-3xl font-black text-hospital-slate uppercase tracking-tighter">Our Core Values</h2>
-                            <div className="grid grid-cols-1 sm:grid-cols-3 gap-12">
-                                <div className="space-y-4">
-                                    <div className="text-3xl">🚀</div>
-                                    <p className="text-primary font-black text-xl uppercase tracking-tight">Innovation</p>
-                                    <p className="text-gray-700 font-bold leading-snug">Bringing cutting-edge IT and operational strategies to modern medicine.</p>
+                            <h2 className="text-3xl font-black text-hospital-slate uppercase tracking-tighter">Why Choose Prime Insurance Consultancy?</h2>
+                            <div className="grid grid-cols-1 gap-6">
+                                <div className="space-y-3">
+                                    <p className="text-primary font-black text-xl uppercase tracking-tight">• Specialized in Insurance & TPA Empanelment</p>
                                 </div>
-                                <div className="space-y-4">
-                                    <div className="text-3xl">🤝</div>
-                                    <p className="text-primary font-black text-xl uppercase tracking-tight">Dedication</p>
-                                    <p className="text-gray-700 font-bold leading-snug">Proactive 24/7 support for hospitals and their critical needs.</p>
+                                <div className="space-y-3">
+                                    <p className="text-primary font-black text-xl uppercase tracking-tight">• Enabling Cashless Services for Hospitals</p>
                                 </div>
-                                <div className="space-y-4">
-                                    <div className="text-3xl">🎯</div>
-                                    <p className="text-primary font-black text-xl uppercase tracking-tight">Excellence</p>
-                                    <p className="text-gray-700 font-bold leading-snug">Ensuring the highest standards of safety and care for patient success.</p>
+                                <div className="space-y-3">
+                                    <p className="text-primary font-black text-xl uppercase tracking-tight">• Streamlining Claims & Ensuring Seamless Coordination</p>
+                                </div>
+                                <div className="space-y-3">
+                                    <p className="text-primary font-black text-xl uppercase tracking-tight">• End-to-end documentation and process management</p>
+                                </div>
+                                <div className="space-y-3">
+                                    <p className="text-primary font-black text-xl uppercase tracking-tight">• Strong coordination with insurers and TPAs</p>
+                                </div>
+                                <div className="space-y-3">
+                                    <p className="text-primary font-black text-xl uppercase tracking-tight">• Dedicated support and professional service</p>
+                                </div>
+                                <div className="space-y-3">
+                                    <p className="text-primary font-black text-xl uppercase tracking-tight">• Expert Guidance & Consulting Support</p>
+                                </div>
+                                <div className="space-y-3">
+                                    <p className="text-primary font-black text-xl uppercase tracking-tight">• Focused on hospital revenue growth and compliance</p>
                                 </div>
                             </div>
                         </div>

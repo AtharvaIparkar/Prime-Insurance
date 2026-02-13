@@ -51,8 +51,8 @@ export const Header = () => {
                         />
                     </div>
                     <div className="flex flex-col -space-y-1">
-                        <span className={`text-xl font-black uppercase tracking-tighter transition-colors duration-500 ${themeColorClass}`}>Prime</span>
-                        <span className="text-[9px] font-black text-primary uppercase tracking-[0.3em]">Insurance Services</span>
+                        <span className={`text-2xl font-black uppercase tracking-[0.4em] transition-colors duration-500 ${themeColorClass}`}>Prime</span>
+                        <span className="text-[11px] font-black text-primary uppercase tracking-[0.3em]">Insurance Services</span>
                     </div>
                 </Link>
 
@@ -67,7 +67,7 @@ export const Header = () => {
                         >
                             <Link
                                 href={link.href}
-                                className={`text-[10px] font-black uppercase tracking-[0.3em] transition-all relative inline-flex items-center ${secondaryColorClass}`}
+                                className={`text-xs font-black uppercase tracking-[0.3em] transition-all relative inline-flex items-center ${secondaryColorClass}`}
                             >
                                 {link.label}
                                 {link.hasDropdown && (
@@ -118,7 +118,7 @@ export const Header = () => {
                     ))}
                     <Link
                         href="/contact"
-                        className={`px-8 py-3 rounded-full font-black text-[10px] uppercase tracking-[0.2em] transition-all shadow-[0_10px_20px_rgba(59,130,246,0.3)] active:scale-95 ${isScrolled ? 'bg-primary text-white hover:bg-white hover:text-primary' : 'bg-primary text-white hover:bg-hospital-slate'}`}
+                        className={`px-8 py-3 rounded-full font-black text-xs uppercase tracking-[0.2em] transition-all shadow-[0_10px_20px_rgba(59,130,246,0.3)] active:scale-95 ${isScrolled ? 'bg-primary text-white hover:bg-white hover:text-primary' : 'bg-primary text-white hover:bg-hospital-slate'}`}
                     >
                         Contact Us
                     </Link>

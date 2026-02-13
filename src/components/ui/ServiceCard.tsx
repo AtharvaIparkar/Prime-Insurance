@@ -8,11 +8,11 @@ interface ServiceCardProps {
 
 export const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
     return (
-        <div className="group bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+        <div className="group bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
             <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center text-3xl mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
                 {service.icon || '🏥'}
             </div>
-            <h3 className="text-xl font-bold text-hospital-slate mb-3 tracking-tight">{service.title}</h3>
+            <h3 className="text-lg sm:text-xl font-bold text-hospital-slate mb-3 tracking-tight">{service.title}</h3>
             <p className="text-gray-800 mb-6 leading-relaxed font-bold line-clamp-3">
                 {service.description}
             </p>

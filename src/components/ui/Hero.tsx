@@ -17,13 +17,13 @@ export const Hero = () => {
                         <span className="text-sm font-semibold text-primary uppercase tracking-wider">🏥 India&apos;s Leading Hospital Consultant</span>
                     </div>
 
-                    <h1 className="text-5xl md:text-6xl font-extrabold text-hospital-slate leading-[1.1]">
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-hospital-slate leading-[1.1]">
                         Hospital & Healthcare <span className="text-primary italic">Consultation</span> Service
                     </h1>
 
                     <div className="space-y-4">
-                        <p className="text-2xl font-black text-hospital-slate uppercase tracking-tight">Your Trusted Partner in Healthcare Excellence</p>
-                        <p className="text-xl text-gray-700 leading-relaxed max-w-xl italic font-medium">
+                        <p className="text-lg sm:text-xl md:text-2xl font-black text-hospital-slate uppercase tracking-tight">Your Trusted Consultancy Partner in Hospital Services</p>
+                        <p className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed max-w-xl italic font-medium">
                             &quot;Transforming Healthcare, One Hospital at a Time&quot;
                         </p>
                     </div>
@@ -46,16 +46,16 @@ export const Hero = () => {
                     <div className="flex items-center space-x-8 pt-4">
                         <div>
                             <p className="text-3xl font-bold text-primary">
-                                <StatCounter end={10} suffix="+" />
+                                <StatCounter end={7} suffix="+" />
                             </p>
                             <p className="text-sm font-medium text-gray-500 uppercase">Years Experience</p>
                         </div>
                         <div className="w-px h-12 bg-gray-200" />
                         <div>
                             <p className="text-3xl font-bold text-primary">
-                                <StatCounter end={50} suffix="+" />
+                                <StatCounter end={150} suffix="+" />
                             </p>
-                            <p className="text-sm font-medium text-gray-500 uppercase">Expert Consultants</p>
+                            <p className="text-sm font-medium text-gray-500 uppercase">Hospitals Cashless tieup's</p>
                         </div>
                     </div>
                 </div>
@@ -108,7 +108,7 @@ export const Hero = () => {
                         <div className="h-1 w-full bg-gray-100 rounded-full overflow-hidden">
                             <div className="h-full bg-primary w-[98%]" />
                         </div>
-                        <p className="text-[10px] text-gray-400 mt-2 font-bold uppercase tracking-tighter">98% Customer Satisfaction in Pune</p>
+                        <p className="text-[10px] text-gray-400 mt-2 font-bold uppercase tracking-tighter">99% Customer Satisfaction in Pune</p>
                     </div>
                 </div>
             </div>

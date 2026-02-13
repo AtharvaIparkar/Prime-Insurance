@@ -1,9 +1,19 @@
 export const hospitalServices = [
     {
+        id: 'empanelments',
+        title: 'Insurance & TPA Cashless Empanelment',
+        slug: 'empanelments',
+        description: 'We specialize in Insurance & TPA Cashless Empanelment services for hospitals across India, helping healthcare institutions build strong associations with government and private insurance providers.',
+        icon: '🏥',
+        link: '/services/empanelments',
+        featured: true,
+        image: '/services/empanelments.webp'
+    },
+    {
         id: 'accreditation',
-        title: 'Accreditation',
+        title: 'NABH and NABL Accreditation',
         slug: 'accreditation',
-        description: 'Accreditation is a vital aspect of hospital consultancy, ensuring that healthcare institutions meet established standards of quality and safety.',
+        description: 'Accreditation is a vital aspect of hospital consultancy, ensuring that healthcare institutions meet established standards of quality and safety through NABH and NABL certifications.',
         icon: '✓',
         link: '/services/accreditation',
         featured: true,
@@ -30,16 +40,6 @@ export const hospitalServices = [
         image: '/services/consultancy-solutions.webp'
     },
     {
-        id: 'empanelments',
-        title: 'Empanelments',
-        slug: 'empanelments',
-        description: 'Strategic placements involving embedding highly trained healthcare professionals within hospital systems to improve operational efficiency and patient care.',
-        icon: '🏥',
-        link: '/services/empanelments',
-        featured: true,
-        image: '/services/empanelments.webp'
-    },
-    {
         id: 'hospital-marketing',
         title: 'Hospital Marketing',
         slug: 'hospital-marketing',
@@ -60,30 +60,12 @@ export const hospitalServices = [
         image: '/services/it-solution.webp'
     },
     {
-        id: 'tpa-empanelment',
-        title: 'TPA Empanelment Consultant in India',
-        slug: 'tpa-empanelment-consultant-in-india',
-        description: 'Expert guidance for Third Party Administrator empanelment processes, ensuring seamless integration with insurance networks.',
-        icon: '📋',
-        link: '/services/tpa-empanelment-consultant-in-india',
-        subService: true
-    },
-    {
-        id: 'nabh-consultant',
-        title: 'NABH Consultant in India',
-        slug: 'nabh-consultant-in-india',
-        description: 'Comprehensive support for achieving NABH (National Accreditation Board for Hospitals & Healthcare Providers) accreditation.',
+        id: 'nabh-nabl-consultant',
+        title: 'NABH/NABL Consultant in India',
+        slug: 'nabh-nabl-consultant-in-india',
+        description: 'Comprehensive support for achieving NABH (National Accreditation Board for Hospitals & Healthcare Providers) and NABL (National Accreditation Board for Testing and Calibration Laboratories) accreditation and certification.',
         icon: '🏆',
-        link: '/services/nabh-consultant-in-india',
-        subService: true
-    },
-    {
-        id: 'nabl-consultant',
-        title: 'NABL Consultant in India',
-        slug: 'nabl-consultant-in-india',
-        description: 'Professional consultancy for NABL (National Accreditation Board for Testing and Calibration Laboratories) certification.',
-        icon: '🔬',
-        link: '/services/nabl-consultant-in-india',
+        link: '/services/nabh-nabl-consultant-in-india',
         subService: true
     },
     {
@@ -107,9 +89,7 @@ export const mainServices = [
 ];
 
 export const subServicesData = [
-    { title: 'TPA Empanelment Consultant in India', href: '/services/tpa-empanelment-consultant-in-india' },
-    { title: 'NABH Consultant in India', href: '/services/nabh-consultant-in-india' },
-    { title: 'NABL Consultant in India', href: '/services/nabl-consultant-in-india' },
+    { title: 'NABH/NABL Consultant in India', href: '/services/nabh-nabl-consultant-in-india' },
     { title: 'Hospital Empanelment Consultant in India', href: '/services/hospital-empanelment-consultant-in-india' }
 ];
 

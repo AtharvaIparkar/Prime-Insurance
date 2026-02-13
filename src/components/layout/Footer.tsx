@@ -6,7 +6,7 @@ export const Footer = () => {
     return (
         <footer className="bg-hospital-slate text-white pt-16 pb-8">
             <div className="container mx-auto px-4">
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-12">
                     {/* Company Bio */}
                     <div className="space-y-6">
                         <div className="flex items-center space-x-3">
@@ -18,9 +18,9 @@ export const Footer = () => {
                                     className="object-contain"
                                 />
                             </div>
-                            <h3 className="text-xl font-black text-white uppercase tracking-tight">Prime Insurance Services</h3>
+                            <h3 className="text-base sm:text-lg md:text-xl font-black text-white uppercase tracking-tight">Prime Insurance Services</h3>
                         </div>
-                        <p className="text-gray-300 font-bold leading-relaxed">
+                        <p className="text-sm sm:text-base text-gray-300 font-bold leading-relaxed">
                             Your trusted partner in healthcare excellence. Specializing in hospital planning, accreditation, and operational advisory services in Rajgurunagar, Pune.
                         </p>
                     </div>

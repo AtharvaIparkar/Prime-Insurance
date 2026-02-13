@@ -12,8 +12,8 @@ export default function ContactPage() {
 
                 <div className="container mx-auto px-4 relative z-10">
                     <div className="max-w-5xl mx-auto text-center mb-10 space-y-6">
-                        <h1 className="text-5xl md:text-7xl font-black text-white tracking-tighter uppercase">Let's <span className="text-primary italic">Talk</span> Healthcare</h1>
-                        <p className="text-xl md:text-2xl text-white font-bold max-w-3xl mx-auto opacity-90 tracking-tight">Partner with us for excellence in hospital planning and advisory services.</p>
+                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tighter uppercase">Let's <span className="text-primary italic">Talk</span> Healthcare</h1>
+                        <p className="text-lg sm:text-xl md:text-2xl text-white font-bold max-w-3xl mx-auto opacity-90 tracking-tight">Partner with us for excellence in hospital planning and advisory services.</p>
                     </div>
                 </div>
             </section>
@@ -65,11 +65,11 @@ export default function ContactPage() {
                                         </div>
                                         <select className="w-full bg-white/10 border border-white/20 p-5 rounded-2xl focus:outline-none focus:border-primary transition-colors text-white font-bold">
                                             <option className="bg-hospital-slate">Select Service Required</option>
-                                            <option className="bg-hospital-slate">Accreditation Support</option>
+                                            <option className="bg-hospital-slate">Insurance & TPA Cashless Empanelment</option>
+                                            <option className="bg-hospital-slate">NABH and NABL Accreditation</option>
                                             <option className="bg-hospital-slate">Cashless Management</option>
                                             <option className="bg-hospital-slate">IT Solutions</option>
                                             <option className="bg-hospital-slate">Hospital Marketing</option>
-                                            <option className="bg-hospital-slate">Empanelment Services</option>
                                         </select>
                                         <textarea placeholder="Describe your hospital's needs..." rows={4} className="w-full bg-white/10 border border-white/20 p-5 rounded-2xl focus:outline-none focus:border-primary transition-colors text-white font-bold placeholder:text-gray-400"></textarea>
                                         <button className="w-full bg-primary py-5 rounded-2xl font-black text-xl uppercase tracking-widest hover:scale-[1.02] transition-all shadow-[0_20px_40px_rgba(59,130,246,0.2)]" type="button">Book Consultation</button>
