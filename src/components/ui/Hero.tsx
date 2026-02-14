@@ -22,7 +22,7 @@ export const Hero = () => {
 
                     <ScrollReveal animation="slide-up" delay={200}>
                         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-hospital-slate leading-[1.1]">
-                            Hospital & Healthcare <span className="text-primary italic">Consultation</span> Service
+                            Hospital & Healthcare Consultation Service
                         </h1>
                     </ScrollReveal>
 
@@ -88,13 +88,13 @@ export const Hero = () => {
                                     className="object-cover"
                                 />
                                 {/* Healthcare Overlay */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-[#1E293B]/40 via-transparent to-transparent" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#2872A1]/40 via-transparent to-transparent" />
                             </div>
                         </div>
 
                         {/* Rajgurunagar Trust Bar */}
                         <div className="absolute bottom-6 left-0 right-0 px-8">
-                            <div className="bg-[#1E293B]/90 backdrop-blur-xl border border-white/20 p-6 rounded-2xl flex items-center space-x-5 shadow-lg">
+                            <div className="bg-[#2872A1]/90 backdrop-blur-xl border border-white/20 p-6 rounded-2xl flex items-center space-x-5 shadow-lg">
                                 <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center text-white">
                                     <span className="text-2xl">📍</span>
                                 </div>
@@ -114,7 +114,7 @@ export const Hero = () => {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                                 </svg>
                             </div>
-                            <p className="font-black text-[#1E293B] text-xs uppercase tracking-wider">Verified Advisory</p>
+                            <p className="font-black text-[#2872A1] text-xs uppercase tracking-wider">Verified Advisory</p>
                         </div>
                         <div className="h-1 w-full bg-slate-100 rounded-full overflow-hidden">
                             <div className="h-full bg-[#2563EB] w-[98%]" />

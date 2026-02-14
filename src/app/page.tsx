@@ -70,7 +70,7 @@ export default function Home() {
             <div className="space-y-8">
               <h3 className="text-primary font-black uppercase tracking-[0.4em] text-sm">Empowering Healthcare</h3>
               <h2 className="text-4xl md:text-6xl font-black text-hospital-slate leading-[1.1] tracking-tighter">
-                Expert Solutions for <br /><span className="text-primary italic">Optimal Care</span> Outcomes
+                Expert Solutions for <br />Optimal Care Outcomes
               </h2>
               <p className="text-xl text-gray-700 leading-relaxed font-bold">
                 Accreditations such as Full NABH, Entry Level NABH, NABL, and JCI are highly esteemed acknowledgements in the healthcare industry, signifying substantial improvements in the safety and quality of care.
@@ -114,16 +114,16 @@ export default function Home() {
       <FAQSection />
 
       {/* Final CTA */}
-      <section className="py-24 bg-[#1E293B] relative overflow-hidden">
+      <section className="py-24 bg-[#2872A1] relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-[-10%] right-[-10%] w-[50%] h-[100%] bg-primary blur-[120px] rounded-full" />
         </div>
 
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="max-w-3xl mx-auto space-y-8">
-            <h2 className="text-[13px] font-black text-primary uppercase tracking-[0.5em]">Ready to Elevate Your Healthcare Facility?</h2>
+            <h2 className="text-[13px] font-black text-[#01358a] uppercase tracking-[0.5em]">Ready to Elevate Your Healthcare Facility?</h2>
             <p className="text-4xl md:text-6xl font-black text-white leading-[1.1] tracking-tighter">
-              Get Expert <span className="text-primary italic">Consultation</span> For Your Hospital Today
+              Get Expert <span className="text-[#01358a] italic">Consultation</span> For Your Hospital Today
             </p>
             <div className="pt-10 flex flex-col sm:flex-row gap-6 justify-center items-center">
               <Link href="/contact" className="w-full sm:w-auto bg-primary text-white px-12 py-5 rounded-2xl font-black uppercase tracking-widest text-sm hover:scale-105 transition-all shadow-[0_20px_40px_rgba(59,130,246,0.3)] inline-block">

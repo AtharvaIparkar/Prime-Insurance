@@ -29,7 +29,7 @@ export const Header = () => {
     }, []);
 
     // Text color logic
-    const themeColorClass = (isScrolled || !isDarkHeaderPage) ? 'text-[#1E293B]' : 'text-white';
+    const themeColorClass = (isScrolled || !isDarkHeaderPage) ? 'text-[#1e293b]' : 'text-white';
     const secondaryColorClass = (isScrolled || !isDarkHeaderPage) ? 'text-[#334155] hover:text-[#2563EB]' : 'text-white/80 hover:text-white';
     const ringColorClass = (isScrolled || !isDarkHeaderPage) ? 'ring-[#2563EB]/10 bg-[#2563EB]/5' : 'ring-white/10 bg-white/5';
     const barColorClass = (isScrolled || !isDarkHeaderPage) ? 'bg-[#2563EB]' : 'bg-white';
@@ -52,7 +52,7 @@ export const Header = () => {
                     </div>
                     <div className="flex flex-col -space-y-1">
                         <span className={`text-2xl font-black uppercase tracking-[0.4em] transition-colors duration-500 ${themeColorClass}`}>Prime</span>
-                        <span className="text-xs font-black text-primary uppercase tracking-[0.3em]">Insurance Services</span>
+                        <span className={`text-xs font-black uppercase tracking-[0.3em] transition-colors duration-500 ${(isScrolled || !isDarkHeaderPage) ? 'text-primary' : 'text-white'}`}>Insurance Services</span>
                     </div>
                 </Link>
 
@@ -137,8 +137,8 @@ export const Header = () => {
                 </button>
             </div>
 
-            {/* Mobile Menu Overlay - Refined Dark Palette */}
-            <div className={`fixed inset-0 bg-[#1E293B] z-[60] lg:hidden transition-all duration-700 ease-in-out ${isMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+            {/* Mobile Menu Overlay - Professional Blue Palette */}
+            <div className={`fixed inset-0 bg-[#2872A1] z-[60] lg:hidden transition-all duration-700 ease-in-out ${isMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
                 <div className="flex flex-col h-full container mx-auto px-8 pt-24 overflow-y-auto pb-12">
                     <button
                         onClick={() => setIsMenuOpen(false)}
@@ -155,7 +155,7 @@ export const Header = () => {
                                     style={{ transitionDelay: `${i * 100}ms` }}
                                     onClick={() => !link.hasDropdown && setIsMenuOpen(false)}
                                 >
-                                    <span className="text-primary italic mr-4">0{i + 1}</span>
+                                    <span className="text-[#1e293b] italic mr-4">0{i + 1}</span>
                                     {link.label}
                                 </Link>
 

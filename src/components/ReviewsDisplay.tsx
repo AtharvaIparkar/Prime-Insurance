@@ -31,7 +31,7 @@ export default function ReviewsDisplay() {
         return (
             <div className="flex flex-col items-center justify-center py-24 space-y-4">
                 <div className="w-12 h-12 border-4 border-[#2563EB] border-t-transparent rounded-full animate-spin"></div>
-                <p className="text-[#1E293B] font-black uppercase tracking-widest text-xs">Fetching Excellence...</p>
+                <p className="text-[#2872A1] font-black uppercase tracking-widest text-xs">Fetching Excellence...</p>
             </div>
         );
     }
@@ -40,7 +40,7 @@ export default function ReviewsDisplay() {
         <div className="max-w-7xl mx-auto px-4">
             {/* Premium Stats Dashboard */}
             <ScrollReveal animation="fade" threshold={0.2}>
-                <div className="bg-[#1E293B] rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden shadow-2xl mb-16">
+                <div className="bg-[#2872A1] rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden shadow-2xl mb-16">
                     <div className="absolute top-0 right-0 w-80 h-80 bg-[#2563EB]/20 blur-[120px] -z-0" />
                     <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/5 blur-[100px] -z-0" />
 
@@ -72,7 +72,7 @@ export default function ReviewsDisplay() {
                                 </div>
 
                                 <div className="flex-grow space-y-4">
-                                    <h3 className="text-[#1E293B] font-black text-xl uppercase tracking-tight group-hover:text-[#2563EB] transition-colors">
+                                    <h3 className="text-[#2872A1] font-black text-xl uppercase tracking-tight group-hover:text-[#2563EB] transition-colors">
                                         "{review.reviewTitle}"
                                     </h3>
                                     <p className="text-slate-600 font-medium leading-relaxed italic">
@@ -85,7 +85,7 @@ export default function ReviewsDisplay() {
                                         {review.name.charAt(0)}
                                     </div>
                                     <div>
-                                        <p className="text-[#1E293B] font-black uppercase tracking-tight text-sm">{review.name}</p>
+                                        <p className="text-[#2872A1] font-black uppercase tracking-tight text-sm">{review.name}</p>
                                         <p className="text-[#2563EB] font-bold text-[10px] uppercase tracking-widest">{review.hospitalName}</p>
                                         <p className="text-slate-400 font-bold text-[9px] uppercase tracking-widest mt-0.5">{review.location}</p>
                                     </div>

@@ -50,7 +50,7 @@ export default function ReviewForm() {
                 <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
                     <span className="text-4xl text-green-600">✓</span>
                 </div>
-                <h3 className="text-[#1E293B] font-black text-3xl mb-4 uppercase tracking-tight">Thank You!</h3>
+                <h3 className="text-[#2872A1] font-black text-3xl mb-4 uppercase tracking-tight">Thank You!</h3>
                 <p className="text-slate-600 font-bold text-lg max-w-sm mx-auto">
                     Your feedback helps us maintain global standards. Your review will be published after verification.
                 </p>
@@ -76,7 +76,7 @@ export default function ReviewForm() {
                                 placeholder="Ex: Dr. Amit Sharma"
                                 value={formData.name}
                                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                                className="w-full bg-[#F9FAFB] border border-[#D1D9E6] p-5 rounded-2xl focus:outline-none focus:border-[#2563EB] transition-colors text-[#1E293B] font-bold placeholder:text-slate-300"
+                                className="w-full bg-[#F9FAFB] border border-[#D1D9E6] p-5 rounded-2xl focus:outline-none focus:border-[#2563EB] transition-colors text-[#2872A1] font-bold placeholder:text-slate-300"
                             />
                         </div>
 
@@ -91,7 +91,7 @@ export default function ReviewForm() {
                                 placeholder="amit@hospital.com"
                                 value={formData.email}
                                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                                className="w-full bg-[#F9FAFB] border border-[#D1D9E6] p-5 rounded-2xl focus:outline-none focus:border-[#2563EB] transition-colors text-[#1E293B] font-bold placeholder:text-slate-300"
+                                className="w-full bg-[#F9FAFB] border border-[#D1D9E6] p-5 rounded-2xl focus:outline-none focus:border-[#2563EB] transition-colors text-[#2872A1] font-bold placeholder:text-slate-300"
                             />
                         </div>
                     </div>
@@ -108,7 +108,7 @@ export default function ReviewForm() {
                                 placeholder="Ex: LifeCare Hospital"
                                 value={formData.hospitalName}
                                 onChange={(e) => setFormData({ ...formData, hospitalName: e.target.value })}
-                                className="w-full bg-[#F9FAFB] border border-[#D1D9E6] p-5 rounded-2xl focus:outline-none focus:border-[#2563EB] transition-colors text-[#1E293B] font-bold placeholder:text-slate-300"
+                                className="w-full bg-[#F9FAFB] border border-[#D1D9E6] p-5 rounded-2xl focus:outline-none focus:border-[#2563EB] transition-colors text-[#2872A1] font-bold placeholder:text-slate-300"
                             />
                         </div>
 
@@ -123,7 +123,7 @@ export default function ReviewForm() {
                                 value={formData.location}
                                 onChange={(e) => setFormData({ ...formData, location: e.target.value })}
                                 placeholder="Pune, Maharashtra"
-                                className="w-full bg-[#F9FAFB] border border-[#D1D9E6] p-5 rounded-2xl focus:outline-none focus:border-[#2563EB] transition-colors text-[#1E293B] font-bold placeholder:text-slate-300"
+                                className="w-full bg-[#F9FAFB] border border-[#D1D9E6] p-5 rounded-2xl focus:outline-none focus:border-[#2563EB] transition-colors text-[#2872A1] font-bold placeholder:text-slate-300"
                             />
                         </div>
                     </div>
@@ -209,7 +209,7 @@ export default function ReviewForm() {
                             onChange={(e) => setFormData({ ...formData, wouldRecommend: e.target.checked })}
                             className="w-6 h-6 border-[#D1D9E6] rounded-md text-[#2563EB] focus:ring-[#2563EB]"
                         />
-                        <label htmlFor="recommend" className="text-[#1E293B] font-bold text-sm">I would recommend Prime Insurance Services to other institutions</label>
+                        <label htmlFor="recommend" className="text-[#2872A1] font-bold text-sm">I would recommend Prime Insurance Services to other institutions</label>
                     </div>
 
                     {/* Submit */}

@@ -10,7 +10,7 @@ interface ServiceDetailProps {
 
 export const ServiceDetailTemplate: React.FC<ServiceDetailProps> = ({ service }) => {
     return (
-        <div className="py-24 container mx-auto px-4 mt-20 bg-[#F9FAFB] min-h-screen">
+        <div className="pt-44 pb-24 container mx-auto px-4 bg-[#F9FAFB] min-h-screen">
             <div className="max-w-4xl mx-auto">
                 <Link href="/services" className="text-[#2563EB] font-black mb-8 inline-flex items-center hover:text-[#1D4ED8] uppercase tracking-widest text-lg transition-colors">
                     <span className="mr-2">←</span> Back to All Services
@@ -22,12 +22,12 @@ export const ServiceDetailTemplate: React.FC<ServiceDetailProps> = ({ service })
                     </div>
                     <div>
                         <p className="text-[#2563EB] font-black uppercase tracking-[0.4em] text-xs mb-2">Service Solution</p>
-                        <h1 className="text-4xl md:text-6xl font-black text-[#1E293B] tracking-tighter">{service.title}</h1>
+                        <h1 className="text-4xl md:text-6xl font-black text-[#2872A1] tracking-tighter">{service.title}</h1>
                     </div>
                 </div>
 
                 <div className="prose prose-xl max-w-none text-gray-900 font-medium mb-16 leading-relaxed">
-                    <p className="text-2xl leading-relaxed text-[#1E293B] font-black mb-10 border-l-4 border-[#2563EB] pl-8 italic">
+                    <p className="text-2xl leading-relaxed text-[#2872A1] font-black mb-10 border-l-4 border-[#2563EB] pl-8 italic">
                         {service.description}
                     </p>
                     <p className="font-black text-xl text-[#334155]">
@@ -38,21 +38,21 @@ export const ServiceDetailTemplate: React.FC<ServiceDetailProps> = ({ service })
                 {service.bulletPoints && service.bulletPoints.length > 0 && (
                     <div className="bg-white p-12 rounded-[3.5rem] border border-[#D1D9E6] shadow-2xl mb-16 relative overflow-hidden">
                         <div className="absolute top-0 right-0 w-32 h-32 bg-[#2563EB]/5 blur-3xl -z-0" />
-                        <h2 className="text-2xl font-black text-[#1E293B] mb-10 uppercase tracking-tight relative z-10">Key Components & Benefits</h2>
+                        <h2 className="text-2xl font-black text-[#2872A1] mb-10 uppercase tracking-tight relative z-10">Key Components & Benefits</h2>
                         <ul className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
                             {service.bulletPoints.map((point, index) => (
                                 <li key={index} className="flex items-start space-x-4">
                                     <div className="w-7 h-7 rounded-full bg-[#2563EB]/20 flex items-center justify-center flex-shrink-0 mt-1">
                                         <span className="text-[#2563EB] font-black text-xs">✓</span>
                                     </div>
-                                    <span className="text-[#1E293B] font-black leading-tight text-lg tracking-tight">{point}</span>
+                                    <span className="text-[#2872A1] font-black leading-tight text-lg tracking-tight">{point}</span>
                                 </li>
                             ))}
                         </ul>
                     </div>
                 )}
 
-                <div className="bg-[#1E293B] text-white p-16 rounded-[4rem] text-center space-y-8 shadow-[0_30px_60px_-15px_rgba(30,41,59,0.4)] relative overflow-hidden">
+                <div className="bg-[#2872A1] text-white p-16 rounded-[4rem] text-center space-y-8 shadow-[0_30px_60px_-15px_rgba(30,41,59,0.4)] relative overflow-hidden">
                     <div className="absolute top-0 right-0 w-64 h-64 bg-[#2563EB]/25 blur-[100px] -z-0" />
                     <div className="relative z-10 space-y-6">
                         <h3 className="text-3xl md:text-5xl font-black uppercase tracking-tight">Ready to start your <span className="text-white underline decoration-primary/50 underline-offset-8 italic">{service.title}</span>?</h3>

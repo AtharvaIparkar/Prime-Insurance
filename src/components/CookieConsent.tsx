@@ -31,11 +31,11 @@ export default function CookieConsent() {
     return (
         <>
             {/* Premium Glass Overlay */}
-            <div className="fixed inset-0 bg-[#1E293B]/40 backdrop-blur-sm z-[100] transition-opacity duration-700" />
+            <div className="fixed inset-0 bg-[#2872A1]/40 backdrop-blur-sm z-[100] transition-opacity duration-700" />
 
             {/* Banner Container */}
             <div className="fixed bottom-0 left-0 right-0 z-[101] p-4 md:p-8 animate-in fade-in slide-in-from-bottom-10 duration-700">
-                <div className="max-w-5xl mx-auto bg-white rounded-[2.5rem] shadow-[0_30px_60px_-15px_rgba(30,41,59,0.3)] border border-[#D1D9E6] p-8 md:p-12 relative overflow-hidden">
+                <div className="max-w-5xl mx-auto bg-white rounded-[2.5rem] shadow-[0_30px_60px_-15px_rgba(40,114,161,0.3)] border border-[#D1D9E6] p-8 md:p-12 relative overflow-hidden">
                     {/* Decorative Pattern */}
                     <div className="absolute top-0 right-0 w-64 h-64 bg-[#2563EB]/5 blur-[80px] -z-0" />
 
@@ -46,7 +46,7 @@ export default function CookieConsent() {
                                 <div className="w-12 h-12 bg-[#EEF4FF] rounded-2xl flex items-center justify-center text-2xl shadow-inner">
                                     🍪
                                 </div>
-                                <h3 className="text-[#1E293B] font-black text-2xl uppercase tracking-tight">Your <span className="text-[#2563EB]">Privacy</span> Matters</h3>
+                                <h3 className="text-[#2872A1] font-black text-2xl uppercase tracking-tight">Your <span className="text-[#2563EB]">Privacy</span> Matters</h3>
                             </div>
                             <p className="text-slate-600 font-bold leading-relaxed max-w-2xl">
                                 We use cookies to enhance your browsing experience, analyze site traffic, and deliver personalized healthcare consultancy insights. By clicking "Accept All", you consent to our use of cookies in accordance with global data standards.

@@ -12,7 +12,7 @@ export const FAQSection = () => {
     };
 
     return (
-        <section className="py-24 bg-[#1E293B] relative overflow-hidden">
+        <section className="py-24 bg-[#2872A1] relative overflow-hidden">
             {/* Pattern Background */}
             <div className="absolute inset-0 opacity-10"
                 style={{
@@ -30,11 +30,11 @@ export const FAQSection = () => {
                         <div key={i} className="bg-white rounded-2xl overflow-hidden shadow-lg transition-all duration-300">
                             <button
                                 onClick={() => toggleAccordion(i)}
-                                className={`w-full p-6 flex justify-between items-center text-left transition-all duration-300 ${activeIndex === i ? 'bg-[#3B82F6] text-white shadow-[0_15px_40px_rgba(59,130,246,0.3)]' : 'bg-white hover:bg-slate-50 text-[#1E293B]'}`}
+                                className={`w-full p-6 flex justify-between items-center text-left transition-all duration-300 ${activeIndex === i ? 'bg-[#3B82F6] text-white shadow-[0_15px_40px_rgba(59,130,246,0.3)]' : 'bg-white hover:bg-slate-50 text-[#2872A1]'}`}
                             >
-                                <span className={`font-bold ${activeIndex === i ? 'text-white' : 'text-[#1E293B]'}`}>{faq.question}</span>
+                                <span className={`font-bold ${activeIndex === i ? 'text-white' : 'text-[#2872A1]'}`}>{faq.question}</span>
                                 <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${activeIndex === i ? 'bg-white/20 rotate-45' : 'bg-slate-100'}`}>
-                                    <span className={`font-black ${activeIndex === i ? 'text-white' : 'text-[#1E293B]'}`}>+</span>
+                                    <span className={`font-black ${activeIndex === i ? 'text-white' : 'text-[#2872A1]'}`}>+</span>
                                 </div>
                             </button>
                             <div

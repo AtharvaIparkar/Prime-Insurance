@@ -17,15 +17,17 @@
   --color-primary-dark: #1D4ED8;
   --color-primary-light: #3B82F6;
   /* Accent Light */
-  --color-secondary: #1E293B;
-  /* Premium Dark Slate */
-  --color-secondary-dark: #0F172A;
+  --color-secondary: #2872A1;
+  /* Ocean Blue */
+  --color-secondary-dark: #1B4D6D;
+  --color-accent-light: #CBDDE9;
+  /* Light Azure */
   --color-accent: #3B82F6;
   --color-medical-blue: #2563EB;
   --color-medical-teal: #14b8a6;
-  --color-hospital-slate: #1E293B;
-  /* Consistent Premium Dark */
-  --color-heading: #1E293B;
+  --color-hospital-slate: #2872A1;
+  /* Ocean Blue consistent */
+  --color-heading: #1B4D6D;
   --color-body: #334155;
   --color-muted: #64748B;
   --color-border: #D1D9E6;

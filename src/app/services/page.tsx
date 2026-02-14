@@ -7,7 +7,7 @@ import { hospitalServices } from '@/constants/services';
 export default function ServicesPage() {
     return (
         <div className="flex flex-col">
-            <section className="bg-[#1E293B] py-24 relative overflow-hidden">
+            <section className="bg-[#2872A1] py-24 relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
                     <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[100%] bg-primary blur-[150px] rounded-full" />
                     <div className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[100%] bg-blue-400/20 blur-[150px] rounded-full" />
@@ -34,7 +34,7 @@ export default function ServicesPage() {
 
                     <div className="mt-24 bg-[#EEF4FF] p-12 md:p-20 rounded-[4rem] text-center border border-[#D1D9E6]">
                         <div className="max-w-3xl mx-auto space-y-8">
-                            <h3 className="text-3xl font-black text-[#1E293B]">Need a Customized Solution?</h3>
+                            <h3 className="text-3xl font-black text-[#2872A1]">Need a Customized Solution?</h3>
                             <p className="text-lg text-[#334155] font-bold leading-relaxed">
                                 Every healthcare facility has unique challenges. Our consultants are experts at tailoring solutions that fit your specific infrastructure and operational needs.
                             </p>

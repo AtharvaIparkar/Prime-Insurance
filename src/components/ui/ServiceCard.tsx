@@ -15,7 +15,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
                 <div className="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center text-3xl mb-8 group-hover:scale-110 group-hover:bg-[#3B82F6] group-hover:text-white transition-all duration-500 shadow-sm border border-slate-100">
                     {service.icon || '🏥'}
                 </div>
-                <h3 className="text-xl sm:text-2xl font-black text-[#1E293B] mb-4 tracking-tight leading-[1.2] group-hover:text-[#2563EB] transition-colors uppercase">
+                <h3 className="text-xl sm:text-2xl font-black text-[#2872A1] mb-4 tracking-tight leading-[1.2] group-hover:text-[#2563EB] transition-colors uppercase">
                     {service.title}
                 </h3>
                 <p className="text-slate-600 mb-8 leading-relaxed font-bold text-sm sm:text-base opacity-90 line-clamp-3 flex-grow">

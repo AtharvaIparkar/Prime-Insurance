@@ -177,7 +177,7 @@ export default function ContactPage() {
     return (
         <div className="flex flex-col">
             {/* Premium Header Section - Refined Dark Palette */}
-            <section className="bg-[#1E293B] py-24 relative overflow-hidden">
+            <section className="bg-[#2872A1] py-24 relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
                     <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[100%] bg-primary blur-[150px] rounded-full" />
                     <div className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[100%] bg-blue-400/20 blur-[150px] rounded-full" />
@@ -187,7 +187,7 @@ export default function ContactPage() {
                     <div className="max-w-5xl mx-auto text-center mb-10 space-y-6">
                         <ScrollReveal animation="fade">
                             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tighter uppercase">
-                                Let&apos;s <span className="text-primary italic">Talk</span> Healthcare
+                                Let&apos;s <span className="text-[#01358a] italic">Talk</span> Healthcare
                             </h1>
                         </ScrollReveal>
                         <ScrollReveal animation="slide-up" delay={200}>
@@ -212,7 +212,7 @@ export default function ContactPage() {
                                             <div className="w-12 h-12 bg-[#3B82F6]/5 rounded-xl flex items-center justify-center text-[#3B82F6] text-xl border border-[#3B82F6]/10">📍</div>
                                             <div>
                                                 <p className="font-black text-[#3B82F6] uppercase tracking-[0.2em] text-[10px] mb-1">Office Location</p>
-                                                <p className="text-[#1E293B] font-bold text-sm">Rajgurunagar, Pune, Maharashtra 410505</p>
+                                                <p className="text-[#2872A1] font-bold text-sm">Rajgurunagar, Pune, Maharashtra 410505</p>
                                             </div>
                                         </div>
 
@@ -220,7 +220,9 @@ export default function ContactPage() {
                                             <div className="w-12 h-12 bg-[#3B82F6]/5 rounded-xl flex items-center justify-center text-[#3B82F6] text-xl border border-[#3B82F6]/10">📧</div>
                                             <div>
                                                 <p className="font-black text-[#3B82F6] uppercase tracking-[0.2em] text-[10px] mb-1">Direct Mail</p>
-                                                <p className="text-[#1E293B] font-bold text-sm break-all">primeinsuranceservicespune@gmail.com</p>
+                                                <a href="mailto:primeinsuranceservicespune@gmail.com" className="text-[#2872A1] font-bold text-sm break-all hover:text-primary transition-colors">
+                                                    primeinsuranceservicespune@gmail.com
+                                                </a>
                                             </div>
                                         </div>
 
@@ -228,9 +230,25 @@ export default function ContactPage() {
                                             <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center text-green-600 text-xl font-bold">WA</div>
                                             <div>
                                                 <p className="font-black text-[#3B82F6] uppercase tracking-[0.2em] text-[10px] mb-1">Social Chat</p>
-                                                <p className="text-[#1E293B] font-bold text-sm">+91 74208 02527</p>
+                                                <a href="tel:7420802527" className="text-[#2872A1] font-bold text-sm block mb-1 hover:text-primary transition-colors">
+                                                    +91 74208 02527
+                                                </a>
                                             </div>
                                         </div>
+
+                                        <a href="https://www.instagram.com/primehealthcare.services" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-4 group">
+                                            <div className="shrink-0 w-12 h-12 bg-gradient-to-tr from-[#833ab4] via-[#fd1d1d] to-[#fcb045] rounded-xl flex items-center justify-center text-white shadow-lg">
+                                                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.266.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.848 0-3.204.012-3.584.07-4.849.149-3.225 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                                                </svg>
+                                            </div>
+                                            <div className="min-w-0">
+                                                <p className="font-black text-[#3B82F6] uppercase tracking-[0.2em] text-[10px] mb-1">Follow Us</p>
+                                                <p className="text-[#2563EB] font-bold text-sm truncate group-hover:text-[#1D4ED8] transition-colors">
+                                                    @primehealthcare.services
+                                                </p>
+                                            </div>
+                                        </a>
                                     </div>
                                 </ScrollReveal>
                             </div>
@@ -238,11 +256,11 @@ export default function ContactPage() {
                             {/* Premium Consultation Form */}
                             <div className="lg:col-span-2">
                                 <ScrollReveal animation="slide-left" delay={400}>
-                                    <div className="bg-[#1E293B] p-10 md:p-16 rounded-[4rem] text-white shadow-xl relative overflow-hidden border border-white/10 h-full">
+                                    <div className="bg-[#2872A1] p-10 md:p-16 rounded-[4rem] text-white shadow-xl relative overflow-hidden border border-white/10 h-full">
                                         <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#3B82F6] opacity-10 blur-[130px] -z-0" />
                                         <div className="relative z-10">
                                             <h3 className="text-3xl font-black mb-8 uppercase tracking-tight">
-                                                Request <span className="text-primary italic">Consultation</span>
+                                                Request <span className="text-[#01358a] italic">Consultation</span>
                                             </h3>
 
                                             {/* Status Messages */}
@@ -317,9 +335,9 @@ export default function ContactPage() {
                                                             onChange={handleStateChange}
                                                             className={`w-full bg-white/10 border ${errors.state ? "border-red-400" : "border-white/20"} p-5 rounded-2xl focus:outline-none focus:border-[#2563EB] transition-colors text-white font-bold`}
                                                         >
-                                                            <option className="bg-[#1E293B]" value="">Select State</option>
+                                                            <option className="bg-[#2872A1]" value="">Select State</option>
                                                             {INDIAN_STATES.map((state) => (
-                                                                <option key={state.code} className="bg-[#1E293B]" value={state.code}>
+                                                                <option key={state.code} className="bg-[#2872A1]" value={state.code}>
                                                                     {state.name}
                                                                 </option>
                                                             ))}
@@ -334,11 +352,11 @@ export default function ContactPage() {
                                                             disabled={!formData.state}
                                                             className={`w-full bg-white/10 border ${errors.district ? "border-red-400" : "border-white/20"} p-5 rounded-2xl focus:outline-none focus:border-[#2563EB] transition-colors text-white font-bold disabled:opacity-50 disabled:cursor-not-allowed`}
                                                         >
-                                                            <option className="bg-[#1E293B]" value="">
+                                                            <option className="bg-[#2872A1]" value="">
                                                                 {!formData.state ? "Select State First" : "Select District"}
                                                             </option>
                                                             {formData.state && INDIAN_DISTRICTS[formData.state]?.map((district) => (
-                                                                <option key={district} className="bg-[#1E293B]" value={district}>
+                                                                <option key={district} className="bg-[#2872A1]" value={district}>
                                                                     {district}
                                                                 </option>
                                                             ))}
@@ -378,12 +396,12 @@ export default function ContactPage() {
                                                         onChange={handleChange}
                                                         className={`w-full bg-white/5 border ${errors.service ? "border-red-400" : "border-white/10"} p-5 rounded-2xl focus:outline-none focus:border-[#3B82F6] transition-all text-white font-bold outline-none`}
                                                     >
-                                                        <option className="bg-[#1E293B]" value="">Select Service Required</option>
-                                                        <option className="bg-[#1E293B]" value="Insurance & TPA Cashless Empanelment">Insurance & TPA Cashless Empanelment</option>
-                                                        <option className="bg-[#1E293B]" value="NABH and NABL Accreditation">NABH and NABL Accreditation</option>
-                                                        <option className="bg-[#1E293B]" value="Cashless Management">Cashless Management</option>
-                                                        <option className="bg-[#1E293B]" value="IT Solutions">IT Solutions</option>
-                                                        <option className="bg-[#1E293B]" value="Hospital Marketing">Hospital Marketing</option>
+                                                        <option className="bg-[#2872A1]" value="">Select Service Required</option>
+                                                        <option className="bg-[#2872A1]" value="Insurance & TPA Cashless Empanelment">Insurance & TPA Cashless Empanelment</option>
+                                                        <option className="bg-[#2872A1]" value="NABH and NABL Accreditation">NABH and NABL Accreditation</option>
+                                                        <option className="bg-[#2872A1]" value="Cashless Management">Cashless Management</option>
+                                                        <option className="bg-[#2872A1]" value="IT Solutions">IT Solutions</option>
+                                                        <option className="bg-[#2872A1]" value="Hospital Marketing">Hospital Marketing</option>
                                                     </select>
                                                     {errors.service && <p className="mt-2 text-red-400 text-xs font-bold">{errors.service}</p>}
                                                 </div>

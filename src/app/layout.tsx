@@ -5,6 +5,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { FloatingCallButton } from "@/components/ui/FloatingContactButton";
 import { FloatingWhatsAppButton } from "@/components/ui/FloatingWhatsAppButton";
+import { FloatingInstagramButton } from "@/components/ui/FloatingInstagramButton";
 import { constructMetadata } from "@/lib/seo";
 import CookieConsent from "@/components/CookieConsent";
 
@@ -34,7 +35,8 @@ export default function RootLayout({
         </main>
         <Footer />
         <CookieConsent />
-        <div className="fixed bottom-8 right-8 z-50 flex flex-row items-center space-x-2">
+        <div className="fixed bottom-8 right-8 z-50 flex flex-row items-center space-x-4">
+          <FloatingInstagramButton />
           <FloatingWhatsAppButton />
           <FloatingCallButton />
         </div>
