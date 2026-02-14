@@ -3,7 +3,6 @@
 :root {
   --background: #ffffff;
   --foreground: #0f172a;
-  /* Deeper slate for better readability */
 }
 
 @theme inline {

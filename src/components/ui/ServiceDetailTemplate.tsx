@@ -52,7 +52,7 @@ export const ServiceDetailTemplate: React.FC<ServiceDetailProps> = ({ service })
                     </div>
                 )}
 
-                <div className="bg-hospital-slate text-white p-16 rounded-[4rem] text-center space-y-8 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] relative overflow-hidden">
+                <div className="bg-hospital-slate text-white p-16 rounded-[4rem] text-center space-y-8 shadow-[0_30px_60px_-15px_rgba(0,0_0,0.5)] relative overflow-hidden">
                     <div className="absolute top-0 right-0 w-64 h-64 bg-primary/20 blur-[100px] -z-0" />
                     <div className="relative z-10 space-y-6">
                         <h3 className="text-3xl md:text-5xl font-black uppercase tracking-tight">Ready to start your <span className="text-primary italic">{service.title}</span>?</h3>

@@ -52,7 +52,7 @@ export const Header = () => {
                     </div>
                     <div className="flex flex-col -space-y-1">
                         <span className={`text-2xl font-black uppercase tracking-[0.4em] transition-colors duration-500 ${themeColorClass}`}>Prime</span>
-                        <span className="text-[11px] font-black text-primary uppercase tracking-[0.3em]">Insurance Services</span>
+                        <span className="text-xs font-black text-primary uppercase tracking-[0.3em]">Insurance Services</span>
                     </div>
                 </Link>
 
@@ -89,7 +89,7 @@ export const Header = () => {
                                                     <Link
                                                         key={service.id}
                                                         href={service.link}
-                                                        className="text-xs font-bold text-hospital-slate hover:text-primary transition-colors flex items-center space-x-3"
+                                                        className="text-sm font-bold text-hospital-slate hover:text-primary transition-colors flex items-center space-x-3"
                                                     >
                                                         <span className="opacity-50">{service.icon}</span>
                                                         <span>{service.title}</span>
@@ -104,7 +104,7 @@ export const Header = () => {
                                                     <Link
                                                         key={sub.title}
                                                         href={sub.href}
-                                                        className="text-[10px] font-bold text-gray-500 hover:text-primary transition-colors"
+                                                        className="text-xs font-bold text-gray-500 hover:text-primary transition-colors"
                                                     >
                                                         {sub.title}
                                                     </Link>
@@ -118,7 +118,7 @@ export const Header = () => {
                     ))}
                     <Link
                         href="/contact"
-                        className={`px-8 py-3 rounded-full font-black text-xs uppercase tracking-[0.2em] transition-all shadow-[0_10px_20px_rgba(59,130,246,0.3)] active:scale-95 ${isScrolled ? 'bg-primary text-white hover:bg-white hover:text-primary' : 'bg-primary text-white hover:bg-hospital-slate'}`}
+                        className={`px-8 py-3 rounded-full font-black text-sm uppercase tracking-[0.2em] transition-all shadow-[0_10px_20px_rgba(59,130,246,0.3)] active:scale-95 ${isScrolled ? 'bg-primary text-white hover:bg-white hover:text-primary' : 'bg-primary text-white hover:bg-hospital-slate'}`}
                     >
                         Contact Us
                     </Link>

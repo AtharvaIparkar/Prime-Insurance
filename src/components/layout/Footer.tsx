@@ -18,10 +18,10 @@ export const Footer = () => {
                                     className="object-contain"
                                 />
                             </div>
-                            <h3 className="text-base sm:text-lg md:text-xl font-black text-white uppercase tracking-tight">Prime Insurance Services</h3>
+                            <h2 className="text-white font-black text-xl leading-none tracking-tighter uppercase italic">Prime <br />Consultancy</h2>
                         </div>
-                        <p className="text-sm sm:text-base text-gray-300 font-bold leading-relaxed">
-                            Your trusted partner in healthcare excellence. Specializing in hospital planning, accreditation, and operational advisory services in Rajgurunagar, Pune.
+                        <p className="text-gray-400 font-bold leading-relaxed">
+                            Empowering healthcare through expert empanelment and accrediation services. We bridge the gap between hospitals and quality standards.
                         </p>
                     </div>
 
@@ -38,32 +38,27 @@ export const Footer = () => {
 
                     {/* Services */}
                     <div>
-                        <h4 className="text-[13px] font-black mb-8 border-b-2 border-primary pb-2 inline-block uppercase tracking-[0.2em]">Our Services</h4>
+                        <h4 className="text-white font-black uppercase tracking-widest text-xs mb-8">Specialized Services</h4>
                         <ul className="space-y-4">
-                            <li><Link href="/services/accreditation" className="text-gray-300 hover:text-white transition-colors font-medium">Accreditation</Link></li>
-                            <li><Link href="/services/cashless-management" className="text-gray-300 hover:text-white transition-colors font-medium">Cashless Management</Link></li>
-                            <li><Link href="/services/empanelments" className="text-gray-300 hover:text-white transition-colors font-medium">Hospital Empanelment</Link></li>
-                            <li><Link href="/services/it-solution" className="text-gray-300 hover:text-white transition-colors font-medium">IT Solutions</Link></li>
+                            <li><Link href="/services/accreditation" className="text-gray-400 hover:text-primary transition-colors font-medium">Accreditation</Link></li>
+                            <li><Link href="/services/cashless-management" className="text-gray-400 hover:text-primary transition-colors font-medium">Cashless Management</Link></li>
+                            <li><Link href="/services/empanelments" className="text-gray-400 hover:text-primary transition-colors font-medium">Hospital Empanelment</Link></li>
+                            <li><Link href="/services/it-solution" className="text-gray-400 hover:text-primary transition-colors font-medium">IT Solutions</Link></li>
                         </ul>
                     </div>
 
                     {/* Contact Info */}
                     <div>
-                        <h4 className="text-lg font-semibold mb-6 border-b border-primary/30 pb-2 inline-block">Get In Touch</h4>
+                        <h4 className="text-white font-black uppercase tracking-widest text-xs mb-8">Contact Info</h4>
                         <ul className="space-y-4">
-                            <li className="flex items-start space-x-3">
-                                <span className="text-primary-light mt-1">📍</span>
-                                <span className="text-gray-400">Rajgurunagar, Pune, Maharashtra</span>
-                            </li>
-                            <li className="flex items-center space-x-3">
-                                <span className="text-primary-light">📧</span>
-                                <span className="text-gray-400 text-sm">primeinsuranceservicespune@gmail.com</span>
-                            </li>
+                            <li className="text-gray-400 font-bold text-sm">Pune/Rajgurunagar Region</li>
+                            <li className="text-gray-400 font-bold text-sm break-all">primeinsuranceservicespune@gmail.com</li>
+                            <li className="text-gray-400 font-bold text-sm">+91 74208 02527 / 77092 00527</li>
                         </ul>
                     </div>
                 </div>
 
-                <div className="border-t border-gray-800 pt-8 flex flex-col md:row items-center justify-between space-y-4 md:space-y-0 text-sm text-gray-500">
+                <div className="pt-8 border-t border-white/10 text-center">
                     <p>© {new Date().getFullYear()} Prime Insurance Services. All Rights Reserved.</p>
                     <div className="flex space-x-6">
                         <Link href="/privacy" className="hover:text-white">Privacy Policy</Link>
