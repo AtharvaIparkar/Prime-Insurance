@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #0f172a;
+  --background: #F9FAFB;
+  --foreground: #334155;
 }
 
 @theme inline {
@@ -11,20 +11,25 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 
-  /* Hospital Consultancy Branding */
-  --color-primary: #3b82f6;
-  /* Medical Blue */
-  --color-primary-dark: #2563eb;
-  --color-primary-light: #60a5fa;
-  --color-secondary: #004080;
-  /* Dark Medical Navy */
-  --color-secondary-dark: #003366;
-  --color-accent: #14b8a6;
-  /* Medical Teal */
-  --color-medical-blue: #3b82f6;
+  /* Hospital Consultancy Branding - Refined Palette */
+  --color-primary: #2563EB;
+  /* Primary Accent */
+  --color-primary-dark: #1D4ED8;
+  --color-primary-light: #3B82F6;
+  /* Accent Light */
+  --color-secondary: #6B8EBF;
+  /* Primary (Lighter Refined Blue) */
+  --color-secondary-dark: #4A6FA5;
+  --color-accent: #3B82F6;
+  --color-medical-blue: #2563EB;
   --color-medical-teal: #14b8a6;
-  --color-hospital-slate: #111827;
-  /* Keeping slate for deep navy/black backgrounds */
+  --color-hospital-slate: #6B8EBF;
+  /* New Lighter Refined Dark */
+  --color-heading: #1E293B;
+  --color-body: #334155;
+  --color-muted: #64748B;
+  --color-border: #D1D9E6;
+  --color-bg-alt: #EEF4FF;
 
   --radius-xl: 1rem;
   --radius-2xl: 1.5rem;

@@ -17,7 +17,7 @@ export default function Home() {
           <div className="max-w-4xl mx-auto text-center mb-16">
             <h3 className="text-primary font-black uppercase tracking-[0.4em] text-sm mb-4">Who We Are</h3>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-hospital-slate uppercase tracking-tighter mb-8">Why Choose Us</h2>
-            <p className="text-base sm:text-lg text-gray-600 leading-relaxed font-medium">
+            <p className="text-base sm:text-lg text-[#334155] leading-relaxed font-medium">
               At Prime Insurance Consultancy, we specialize in Insurance & TPA Cashless Empanelment services for hospitals across India. Our mission is to help healthcare institutions build strong associations with both government and private insurance providers, enabling smooth and efficient cashless treatment facilities for patients.
             </p>
           </div>
@@ -114,7 +114,7 @@ export default function Home() {
       <FAQSection />
 
       {/* Final CTA */}
-      <section className="py-24 bg-hospital-slate relative overflow-hidden">
+      <section className="py-24 bg-[#6B8EBF] relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-[-10%] right-[-10%] w-[50%] h-[100%] bg-primary blur-[120px] rounded-full" />
         </div>

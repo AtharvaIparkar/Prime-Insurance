@@ -22,8 +22,8 @@ export const Hero = () => {
                     </h1>
 
                     <div className="space-y-4">
-                        <p className="text-lg sm:text-xl md:text-2xl font-black text-hospital-slate uppercase tracking-tight">Your Trusted Consultancy Partner in Hospital Services</p>
-                        <p className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed max-w-xl italic font-medium">
+                        <p className="text-lg sm:text-xl md:text-2xl font-black text-[#2563EB] uppercase tracking-[0.2em]">Consultancy Excellence</p>
+                        <p className="text-base sm:text-lg md:text-xl text-[#334155] leading-relaxed max-w-xl italic font-medium">
                             &quot;Transforming Healthcare, One Hospital at a Time&quot;
                         </p>
                     </div>
@@ -61,11 +61,11 @@ export const Hero = () => {
                 </div>
 
                 <div className="relative hidden lg:block">
-                    {/* Enhanced Abstract Visual */}
-                    <div className="aspect-square bg-hospital-slate rounded-[3.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.3)] overflow-hidden border-[12px] border-white/5 relative group">
-                        {/* Background Mesh Gradient */}
-                        <div className="absolute inset-0 bg-[#111827]" />
-                        <div className="absolute top-[-20%] left-[-20%] w-[80%] h-[80%] bg-primary/20 blur-[120px] rounded-full animate-pulse" />
+                    {/* Visual Enhancement - Healthcare Pattern Base */}
+                    <div className="aspect-square bg-[#EEF4FF] rounded-[4rem] shadow-2xl overflow-hidden border border-[#D1D9E6] relative group">
+                        {/* Dynamic Mesh Decorative Pattern */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-[#EEF4FF] via-white to-[#EEF4FF]" />
+                        <div className="absolute top-[-20%] left-[-10%] w-[100%] h-[100%] bg-[#2563EB]/5 blur-[120px] rounded-full animate-pulse" />
 
                         {/* Framed Image - Made "abit small" and centered */}
                         <div className="absolute inset-0 flex items-center justify-center p-16">
@@ -76,20 +76,20 @@ export const Hero = () => {
                                     fill
                                     className="object-cover"
                                 />
-                                {/* Glassmorphism Overlay on Image */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-hospital-slate/60 to-transparent" />
+                                {/* Healthcare Overlay */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#6B8EBF]/30 via-transparent to-transparent" />
                             </div>
                         </div>
 
                         {/* Rajgurunagar Trust Bar */}
                         <div className="absolute bottom-6 left-0 right-0 px-8">
-                            <div className="bg-white/5 backdrop-blur-xl border border-white/10 p-6 rounded-2xl flex items-center space-x-5">
-                                <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center text-primary">
+                            <div className="bg-[#6B8EBF]/90 backdrop-blur-xl border border-white/20 p-6 rounded-2xl flex items-center space-x-5 shadow-lg">
+                                <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center text-white">
                                     <span className="text-2xl">📍</span>
                                 </div>
                                 <div className="flex-1">
                                     <p className="text-white font-black uppercase tracking-widest text-xs mb-1">Local Presence</p>
-                                    <p className="text-gray-300 font-bold text-sm">Serving Rajgurunagar & Pune Region</p>
+                                    <p className="text-[#EEF4FF] font-bold text-sm">Serving Rajgurunagar & Pune Region</p>
                                 </div>
                             </div>
                         </div>
@@ -103,12 +103,12 @@ export const Hero = () => {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                                 </svg>
                             </div>
-                            <p className="font-black text-hospital-slate text-xs uppercase tracking-wider">Verified Advisory</p>
+                            <p className="font-black text-[#1E293B] text-xs uppercase tracking-wider">Verified Advisory</p>
                         </div>
-                        <div className="h-1 w-full bg-gray-100 rounded-full overflow-hidden">
-                            <div className="h-full bg-primary w-[98%]" />
+                        <div className="h-1 w-full bg-slate-100 rounded-full overflow-hidden">
+                            <div className="h-full bg-[#2563EB] w-[98%]" />
                         </div>
-                        <p className="text-[10px] text-gray-400 mt-2 font-bold uppercase tracking-tighter">99% Customer Satisfaction in Pune</p>
+                        <p className="text-[10px] text-[#64748B] mt-2 font-bold uppercase tracking-tighter">99% Customer Satisfaction in Pune</p>
                     </div>
                 </div>
             </div>

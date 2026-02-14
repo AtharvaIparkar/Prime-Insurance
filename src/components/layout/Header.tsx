@@ -18,7 +18,7 @@ export const Header = () => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const pathname = usePathname();
 
-    const isDarkHeaderPage = pathname === '/about' || pathname === '/contact';
+    const isDarkHeaderPage = pathname === '/about' || pathname === '/contact' || pathname === '/services';
 
     useEffect(() => {
         const handleScroll = () => {
@@ -29,17 +29,17 @@ export const Header = () => {
     }, []);
 
     // Text color logic
-    const themeColorClass = isScrolled ? 'text-white' : 'text-hospital-slate';
-    const secondaryColorClass = isScrolled ? 'text-white/70 hover:text-white' : 'text-hospital-slate/70 hover:text-hospital-slate';
-    const ringColorClass = isScrolled ? 'ring-white/10 bg-white/5' : 'ring-hospital-slate/10 bg-hospital-slate/5';
-    const barColorClass = isScrolled ? 'bg-white' : 'bg-hospital-slate';
+    const themeColorClass = (isScrolled || !isDarkHeaderPage) ? 'text-[#1E293B]' : 'text-white';
+    const secondaryColorClass = (isScrolled || !isDarkHeaderPage) ? 'text-[#334155] hover:text-[#2563EB]' : 'text-white/80 hover:text-white';
+    const ringColorClass = (isScrolled || !isDarkHeaderPage) ? 'ring-[#2563EB]/10 bg-[#2563EB]/5' : 'ring-white/10 bg-white/5';
+    const barColorClass = (isScrolled || !isDarkHeaderPage) ? 'bg-[#2563EB]' : 'bg-white';
 
     return (
         <header className={`fixed top-0 z-50 w-full transition-all duration-500 ease-in-out px-4 flex justify-center ${isScrolled ? 'pt-4' : 'pt-0'}`}>
-            <div className={`transition-all duration-500 ease-in-out flex items-center justify-between px-6 md:px-10 h-20 
+            <div className={`transition-all duration-700 ease-in-out flex items-center justify-between px-6 md:px-10 h-20 
                 ${isScrolled
-                    ? 'container max-w-6xl bg-black/70 backdrop-blur-2xl rounded-[2.5rem] border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.3)]'
-                    : 'w-full bg-white/80 backdrop-blur-xl border-b border-gray-200/50 shadow-sm'}`}>
+                    ? 'container max-w-6xl bg-white/95 backdrop-blur-xl rounded-full border border-gray-100 shadow-xl'
+                    : `w-full bg-transparent border-b ${isDarkHeaderPage ? 'border-white/10' : 'border-slate-100'}`}`}>
 
                 <Link href="/" className="flex items-center space-x-3 group outline-none">
                     <div className="relative w-10 h-10 transition-transform duration-500 group-hover:scale-110">
@@ -137,8 +137,8 @@ export const Header = () => {
                 </button>
             </div>
 
-            {/* Mobile Menu Overlay */}
-            <div className={`fixed inset-0 bg-black/95 backdrop-blur-2xl z-[60] lg:hidden transition-all duration-500 ease-in-out ${isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
+            {/* Mobile Menu Overlay - Updated for Lighter Palette */}
+            <div className={`fixed inset-0 bg-[#6B8EBF] z-[60] lg:hidden transition-all duration-700 ease-in-out ${isMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
                 <div className="flex flex-col h-full container mx-auto px-8 pt-24 overflow-y-auto pb-12">
                     <button
                         onClick={() => setIsMenuOpen(false)}

@@ -175,8 +175,8 @@ export default function ContactPage() {
 
     return (
         <div className="flex flex-col">
-            {/* Dark Header Section */}
-            <section className="bg-black py-24 relative overflow-hidden">
+            {/* Dark Header Section - Lighter Refined Palette */}
+            <section className="bg-[#6B8EBF] py-24 relative overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none">
                     <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[100%] bg-primary blur-[120px] rounded-full" />
                     <div className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[100%] bg-secondary blur-[120px] rounded-full" />
@@ -203,34 +203,34 @@ export default function ContactPage() {
                             <div className="lg:col-span-1 space-y-8">
                                 <div className="bg-gray-50 p-8 md:p-12 rounded-[2.5rem] border border-gray-100 shadow-sm space-y-8">
                                     <div className="flex items-start space-x-4">
-                                        <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary text-xl">📍</div>
+                                        <div className="w-12 h-12 bg-[#3B82F6]/5 rounded-xl flex items-center justify-center text-[#3B82F6] text-xl border border-[#3B82F6]/10">📍</div>
                                         <div>
-                                            <p className="font-black text-hospital-slate uppercase tracking-wider text-[10px] mb-1">Our Location</p>
-                                            <p className="text-gray-700 font-bold text-sm">Rajgurunagar, Pune, Maharashtra 410505</p>
+                                            <p className="font-black text-[#3B82F6] uppercase tracking-[0.2em] text-[10px] mb-1">Office Location</p>
+                                            <p className="text-[#1E293B] font-bold text-sm">Rajgurunagar, Pune, Maharashtra 410505</p>
                                         </div>
                                     </div>
 
                                     <div className="flex items-start space-x-4">
-                                        <div className="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center text-secondary text-xl">📧</div>
+                                        <div className="w-12 h-12 bg-[#3B82F6]/5 rounded-xl flex items-center justify-center text-[#3B82F6] text-xl border border-[#3B82F6]/10">📧</div>
                                         <div>
-                                            <p className="font-black text-hospital-slate uppercase tracking-wider text-[10px] mb-1">Email Us</p>
-                                            <p className="text-gray-700 font-bold text-sm break-all">primeinsuranceservicespune@gmail.com</p>
+                                            <p className="font-black text-[#3B82F6] uppercase tracking-[0.2em] text-[10px] mb-1">Direct Mail</p>
+                                            <p className="text-[#1E293B] font-bold text-sm break-all">primeinsuranceservicespune@gmail.com</p>
                                         </div>
                                     </div>
 
                                     <div className="flex items-start space-x-4">
                                         <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center text-green-600 text-xl font-bold">WA</div>
                                         <div>
-                                            <p className="font-black text-hospital-slate uppercase tracking-wider text-[10px] mb-1">WhatsApp</p>
-                                            <p className="text-gray-700 font-bold text-sm">+91 74208 02527</p>
+                                            <p className="font-black text-[#3B82F6] uppercase tracking-[0.2em] text-[10px] mb-1">Social Chat</p>
+                                            <p className="text-[#1E293B] font-bold text-sm">+91 74208 02527</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            {/* Consultation Form */}
-                            <div className="lg:col-span-2 bg-hospital-slate p-8 md:p-12 rounded-[3.5rem] text-white shadow-2xl relative overflow-hidden">
-                                <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 blur-[100px] -z-0" />
+                            {/* Premium Consultation Form */}
+                            <div className="lg:col-span-2 bg-[#6B8EBF] p-10 md:p-16 rounded-[4rem] text-white shadow-xl relative overflow-hidden border border-white/10">
+                                <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#3B82F6]/10 blur-[130px] -z-0" />
                                 <div className="relative z-10">
                                     <h3 className="text-3xl font-black mb-8 uppercase tracking-tight">
                                         Request <span className="text-primary italic">Consultation</span>
@@ -260,7 +260,7 @@ export default function ContactPage() {
                                                     value={formData.name}
                                                     onChange={handleChange}
                                                     placeholder="Your Name"
-                                                    className={`w-full bg-white/10 border ${errors.name || errors.email || errors.phone || errors.hospitalName || errors.message ? "border-red-400" : "border-white/20"} p-5 rounded-2xl focus:outline-none focus:border-primary transition-colors text-white font-bold placeholder:text-gray-400`}
+                                                    className={`w-full bg-white/10 border ${errors.name || errors.email || errors.phone || errors.hospitalName || errors.message ? "border-red-400" : "border-white/20"} p-5 rounded-2xl focus:outline-none focus:border-[#2563EB] transition-colors text-white font-bold placeholder:text-[#D1D9E6]/50`}
                                                 />
                                                 {errors.name && <p className="mt-2 text-red-400 text-xs font-bold">{errors.name}</p>}
                                             </div>
@@ -273,7 +273,7 @@ export default function ContactPage() {
                                                     value={formData.email}
                                                     onChange={handleChange}
                                                     placeholder="Email Address"
-                                                    className={`w-full bg-white/10 border ${errors.email ? "border-red-400" : "border-white/20"} p-5 rounded-2xl focus:outline-none focus:border-primary transition-colors text-white font-bold placeholder:text-gray-400`}
+                                                    className={`w-full bg-white/10 border ${errors.email ? "border-red-400" : "border-white/20"} p-5 rounded-2xl focus:outline-none focus:border-[#2563EB] transition-colors text-white font-bold placeholder:text-[#D1D9E6]/50`}
                                                 />
                                                 {errors.email && <p className="mt-2 text-red-400 text-xs font-bold">{errors.email}</p>}
                                             </div>
@@ -288,7 +288,7 @@ export default function ContactPage() {
                                                     value={formData.phone}
                                                     onChange={handleChange}
                                                     placeholder="Phone Number"
-                                                    className={`w-full bg-white/10 border ${errors.phone ? "border-red-400" : "border-white/20"} p-5 rounded-2xl focus:outline-none focus:border-primary transition-colors text-white font-bold placeholder:text-gray-400`}
+                                                    className={`w-full bg-white/10 border ${errors.phone ? "border-red-400" : "border-white/20"} p-5 rounded-2xl focus:outline-none focus:border-[#2563EB] transition-colors text-white font-bold placeholder:text-[#D1D9E6]/50`}
                                                 />
                                                 {errors.phone && <p className="mt-2 text-red-400 text-xs font-bold">{errors.phone}</p>}
                                             </div>
@@ -300,7 +300,7 @@ export default function ContactPage() {
                                                     name="preferredDate"
                                                     value={formData.preferredDate}
                                                     onChange={handleChange}
-                                                    className="w-full bg-white/10 border border-white/20 p-5 rounded-2xl focus:outline-none focus:border-primary transition-colors text-white font-bold placeholder:text-gray-400"
+                                                    className="w-full bg-white/10 border border-white/20 p-5 rounded-2xl focus:outline-none focus:border-[#2563EB] transition-colors text-white font-bold placeholder:text-[#D1D9E6]/50"
                                                 />
                                             </div>
                                         </div>
@@ -312,11 +312,11 @@ export default function ContactPage() {
                                                     name="state"
                                                     value={formData.state}
                                                     onChange={handleStateChange}
-                                                    className={`w-full bg-white/10 border ${errors.state ? "border-red-400" : "border-white/20"} p-5 rounded-2xl focus:outline-none focus:border-primary transition-colors text-white font-bold`}
+                                                    className={`w-full bg-white/10 border ${errors.state ? "border-red-400" : "border-white/20"} p-5 rounded-2xl focus:outline-none focus:border-[#2563EB] transition-colors text-white font-bold`}
                                                 >
-                                                    <option className="bg-hospital-slate" value="">Select State</option>
+                                                    <option className="bg-[#6B8EBF]" value="">Select State</option>
                                                     {INDIAN_STATES.map((state) => (
-                                                        <option key={state.code} className="bg-hospital-slate" value={state.code}>
+                                                        <option key={state.code} className="bg-[#6B8EBF]" value={state.code}>
                                                             {state.name}
                                                         </option>
                                                     ))}
@@ -331,13 +331,13 @@ export default function ContactPage() {
                                                     value={formData.district}
                                                     onChange={handleChange}
                                                     disabled={!formData.state}
-                                                    className={`w-full bg-white/10 border ${errors.district ? "border-red-400" : "border-white/20"} p-5 rounded-2xl focus:outline-none focus:border-primary transition-colors text-white font-bold disabled:opacity-50 disabled:cursor-not-allowed`}
+                                                    className={`w-full bg-white/10 border ${errors.district ? "border-red-400" : "border-white/20"} p-5 rounded-2xl focus:outline-none focus:border-[#2563EB] transition-colors text-white font-bold disabled:opacity-50 disabled:cursor-not-allowed`}
                                                 >
-                                                    <option className="bg-hospital-slate" value="">
+                                                    <option className="bg-[#6B8EBF]" value="">
                                                         {!formData.state ? "Select State First" : "Select District"}
                                                     </option>
                                                     {formData.state && INDIAN_DISTRICTS[formData.state]?.map((district) => (
-                                                        <option key={district} className="bg-hospital-slate" value={district}>
+                                                        <option key={district} className="bg-[#6B8EBF]" value={district}>
                                                             {district}
                                                         </option>
                                                     ))}
@@ -354,7 +354,7 @@ export default function ContactPage() {
                                                     onChange={handleChange}
                                                     placeholder="6-digit Pincode"
                                                     maxLength={6}
-                                                    className={`w-full bg-white/10 border ${errors.pincode ? "border-red-400" : "border-white/20"} p-5 rounded-2xl focus:outline-none focus:border-primary transition-colors text-white font-bold placeholder:text-gray-400`}
+                                                    className={`w-full bg-white/10 border ${errors.pincode ? "border-red-400" : "border-white/20"} p-5 rounded-2xl focus:outline-none focus:border-[#2563EB] transition-colors text-white font-bold placeholder:text-[#D1D9E6]/50`}
                                                 />
                                                 {errors.pincode && <p className="mt-2 text-red-400 text-xs font-bold">{errors.pincode}</p>}
                                             </div>
@@ -368,7 +368,7 @@ export default function ContactPage() {
                                                 value={formData.hospitalName}
                                                 onChange={handleChange}
                                                 placeholder="Hospital Name"
-                                                className={`w-full bg-white/10 border ${errors.hospitalName ? "border-red-400" : "border-white/20"} p-5 rounded-2xl focus:outline-none focus:border-primary transition-colors text-white font-bold placeholder:text-gray-400`}
+                                                className={`w-full bg-white/10 border ${errors.hospitalName ? "border-red-400" : "border-white/20"} p-5 rounded-2xl focus:outline-none focus:border-[#2563EB] transition-colors text-white font-bold placeholder:text-[#D1D9E6]/50`}
                                             />
                                             {errors.hospitalName && <p className="mt-2 text-red-400 text-xs font-bold">{errors.hospitalName}</p>}
                                         </div>
@@ -379,14 +379,14 @@ export default function ContactPage() {
                                                 name="service"
                                                 value={formData.service}
                                                 onChange={handleChange}
-                                                className={`w-full bg-white/10 border ${errors.service ? "border-red-400" : "border-white/20"} p-5 rounded-2xl focus:outline-none focus:border-primary transition-colors text-white font-bold`}
+                                                className={`w-full bg-white/5 border ${errors.service ? "border-red-400" : "border-white/10"} p-5 rounded-2xl focus:outline-none focus:border-[#3B82F6] transition-all text-white font-bold outline-none`}
                                             >
-                                                <option className="bg-hospital-slate" value="">Select Service Required</option>
-                                                <option className="bg-hospital-slate" value="Insurance & TPA Cashless Empanelment">Insurance & TPA Cashless Empanelment</option>
-                                                <option className="bg-hospital-slate" value="NABH and NABL Accreditation">NABH and NABL Accreditation</option>
-                                                <option className="bg-hospital-slate" value="Cashless Management">Cashless Management</option>
-                                                <option className="bg-hospital-slate" value="IT Solutions">IT Solutions</option>
-                                                <option className="bg-hospital-slate" value="Hospital Marketing">Hospital Marketing</option>
+                                                <option className="bg-[#6B8EBF]" value="">Select Service Required</option>
+                                                <option className="bg-[#6B8EBF]" value="Insurance & TPA Cashless Empanelment">Insurance & TPA Cashless Empanelment</option>
+                                                <option className="bg-[#6B8EBF]" value="NABH and NABL Accreditation">NABH and NABL Accreditation</option>
+                                                <option className="bg-[#6B8EBF]" value="Cashless Management">Cashless Management</option>
+                                                <option className="bg-[#6B8EBF]" value="IT Solutions">IT Solutions</option>
+                                                <option className="bg-[#6B8EBF]" value="Hospital Marketing">Hospital Marketing</option>
                                             </select>
                                             {errors.service && <p className="mt-2 text-red-400 text-xs font-bold">{errors.service}</p>}
                                         </div>
@@ -399,7 +399,7 @@ export default function ContactPage() {
                                                 onChange={handleChange}
                                                 placeholder="Describe your hospital's needs..."
                                                 rows={4}
-                                                className={`w-full bg-white/10 border ${errors.message ? "border-red-400" : "border-white/20"} p-5 rounded-2xl focus:outline-none focus:border-primary transition-colors text-white font-bold placeholder:text-gray-400`}
+                                                className={`w-full bg-white/10 border ${errors.message ? "border-red-400" : "border-white/20"} p-5 rounded-2xl focus:outline-none focus:border-[#2563EB] transition-colors text-white font-bold placeholder:text-[#D1D9E6]/50`}
                                             />
                                             {errors.message && <p className="mt-2 text-red-400 text-xs font-bold">{errors.message}</p>}
                                         </div>
@@ -408,9 +408,9 @@ export default function ContactPage() {
                                         <button
                                             type="submit"
                                             disabled={isSubmitting}
-                                            className={`w-full py-5 rounded-2xl font-black text-xl uppercase tracking-widest transition-all shadow-[0_20px_40px_rgba(59,130,246,0.2)] ${isSubmitting
-                                                ? "bg-primary/50 cursor-not-allowed scale-100"
-                                                : "bg-primary hover:scale-[1.02] cursor-pointer"
+                                            className={`w-full py-5 rounded-2xl font-black text-xl uppercase tracking-widest transition-all shadow-[0_20px_40px_rgba(37,99,235,0.2)] ${isSubmitting
+                                                ? "bg-[#2563EB]/50 cursor-not-allowed scale-100"
+                                                : "bg-[#2563EB] hover:scale-[1.02] cursor-pointer"
                                                 }`}
                                         >
                                             {isSubmitting ? (
