@@ -201,25 +201,25 @@ export async function POST(request: NextRequest) {
 // We need a type import for Mongoose validation errors
 import mongoose from "mongoose";
 
+import { cookies } from "next/headers";
+
 // ═══════════════════════════════════════════════════════════════════════════════
 // GET /api/consultation — Retrieve consultation requests (protected)
 // ═══════════════════════════════════════════════════════════════════════════════
 export async function GET(request: NextRequest) {
     try {
-        // ── Basic auth check using a secret key ──────────────────────────────
+        // ── Auth check (API key or Session Cookie) ───────────────────────────
         const authHeader = request.headers.get("authorization");
         const apiKey = process.env.ADMIN_API_KEY;
 
-        if (!apiKey) {
-            return NextResponse.json(
-                { success: false, error: "Admin API key not configured." },
-                { status: 500, headers: corsHeaders() }
-            );
-        }
+        const cookieStore = await cookies();
+        const isAuthenticated = cookieStore.get("admin_session")?.value === "authenticated";
 
-        if (!authHeader || authHeader !== `Bearer ${apiKey}`) {
+        const hasValidApiKey = apiKey && authHeader === `Bearer ${apiKey}`;
+
+        if (!hasValidApiKey && !isAuthenticated) {
             return NextResponse.json(
-                { success: false, error: "Unauthorized. Invalid or missing API key." },
+                { success: false, error: "Unauthorized. Please log in or provide a valid API key." },
                 { status: 401, headers: corsHeaders() }
             );
         }
@@ -266,6 +266,82 @@ export async function GET(request: NextRequest) {
         );
     } catch (error) {
         console.error("❌ GET Error:", error);
+        return NextResponse.json(
+            {
+                success: false,
+                error: "Internal server error. Please try again later.",
+            },
+            { status: 500, headers: corsHeaders() }
+        );
+    }
+}
+// ═══════════════════════════════════════════════════════════════════════════════
+// PATCH /api/consultation — Update consultation status (protected)
+// ═══════════════════════════════════════════════════════════════════════════════
+export async function PATCH(request: NextRequest) {
+    try {
+        // ── Auth check (API key or Session Cookie) ───────────────────────────
+        const authHeader = request.headers.get("authorization");
+        const apiKey = process.env.ADMIN_API_KEY;
+
+        const cookieStore = await cookies();
+        const isAuthenticated = cookieStore.get("admin_session")?.value === "authenticated";
+
+        const hasValidApiKey = apiKey && authHeader === `Bearer ${apiKey}`;
+
+        if (!hasValidApiKey && !isAuthenticated) {
+            return NextResponse.json(
+                { success: false, error: "Unauthorized. Please log in or provide a valid API key." },
+                { status: 401, headers: corsHeaders() }
+            );
+        }
+
+        // ── Parse request body ───────────────────────────────────────────────
+        const body = await request.json();
+        const { id, status } = body;
+
+        if (!id || !status) {
+            return NextResponse.json(
+                { success: false, error: "ID and status are required." },
+                { status: 400, headers: corsHeaders() }
+            );
+        }
+
+        const validStatuses = ["pending", "contacted", "completed", "cancelled"];
+        if (!validStatuses.includes(status)) {
+            return NextResponse.json(
+                { success: false, error: "Invalid status value." },
+                { status: 400, headers: corsHeaders() }
+            );
+        }
+
+        // ── Connect to MongoDB ───────────────────────────────────────────────
+        await connectDB();
+
+        // ── Update consultation ─────────────────────────────────────────────
+        const consultation = await Consultation.findByIdAndUpdate(
+            id,
+            { status },
+            { new: true, runValidators: true }
+        );
+
+        if (!consultation) {
+            return NextResponse.json(
+                { success: false, error: "Consultation not found." },
+                { status: 404, headers: corsHeaders() }
+            );
+        }
+
+        return NextResponse.json(
+            {
+                success: true,
+                message: "Status updated successfully.",
+                data: consultation,
+            },
+            { status: 200, headers: corsHeaders() }
+        );
+    } catch (error) {
+        console.error("❌ PATCH Error:", error);
         return NextResponse.json(
             {
                 success: false,
