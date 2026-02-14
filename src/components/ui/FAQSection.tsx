@@ -12,7 +12,7 @@ export const FAQSection = () => {
     };
 
     return (
-        <section className="py-24 bg-[#6B8EBF] relative overflow-hidden">
+        <section className="py-24 bg-[#1E293B] relative overflow-hidden">
             {/* Pattern Background */}
             <div className="absolute inset-0 opacity-10"
                 style={{

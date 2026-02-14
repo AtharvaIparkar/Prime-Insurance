@@ -137,8 +137,8 @@ export const Header = () => {
                 </button>
             </div>
 
-            {/* Mobile Menu Overlay - Updated for Lighter Palette */}
-            <div className={`fixed inset-0 bg-[#6B8EBF] z-[60] lg:hidden transition-all duration-700 ease-in-out ${isMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+            {/* Mobile Menu Overlay - Refined Dark Palette */}
+            <div className={`fixed inset-0 bg-[#1E293B] z-[60] lg:hidden transition-all duration-700 ease-in-out ${isMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
                 <div className="flex flex-col h-full container mx-auto px-8 pt-24 overflow-y-auto pb-12">
                     <button
                         onClick={() => setIsMenuOpen(false)}

@@ -12,7 +12,7 @@ export const ServiceDetailTemplate: React.FC<ServiceDetailProps> = ({ service })
     return (
         <div className="py-24 container mx-auto px-4 mt-20 bg-[#F9FAFB] min-h-screen">
             <div className="max-w-4xl mx-auto">
-                <Link href="/services" className="text-[#6B8EBF] font-bold mb-8 inline-flex items-center hover:text-[#2563EB] uppercase tracking-widest text-lg transition-colors">
+                <Link href="/services" className="text-[#2563EB] font-black mb-8 inline-flex items-center hover:text-[#1D4ED8] uppercase tracking-widest text-lg transition-colors">
                     <span className="mr-2">←</span> Back to All Services
                 </Link>
 
@@ -52,7 +52,7 @@ export const ServiceDetailTemplate: React.FC<ServiceDetailProps> = ({ service })
                     </div>
                 )}
 
-                <div className="bg-[#6B8EBF] text-white p-16 rounded-[4rem] text-center space-y-8 shadow-[0_30px_60px_-15px_rgba(107,142,191,0.4)] relative overflow-hidden">
+                <div className="bg-[#1E293B] text-white p-16 rounded-[4rem] text-center space-y-8 shadow-[0_30px_60px_-15px_rgba(30,41,59,0.4)] relative overflow-hidden">
                     <div className="absolute top-0 right-0 w-64 h-64 bg-[#2563EB]/25 blur-[100px] -z-0" />
                     <div className="relative z-10 space-y-6">
                         <h3 className="text-3xl md:text-5xl font-black uppercase tracking-tight">Ready to start your <span className="text-white underline decoration-primary/50 underline-offset-8 italic">{service.title}</span>?</h3>

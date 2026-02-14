@@ -7,10 +7,10 @@ import { hospitalServices } from '@/constants/services';
 export default function ServicesPage() {
     return (
         <div className="flex flex-col">
-            <section className="bg-[#6B8EBF] py-24 relative overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none">
-                    <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[100%] bg-primary blur-[120px] rounded-full" />
-                    <div className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[100%] bg-secondary blur-[120px] rounded-full" />
+            <section className="bg-[#1E293B] py-24 relative overflow-hidden">
+                <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+                    <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[100%] bg-primary blur-[150px] rounded-full" />
+                    <div className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[100%] bg-blue-400/20 blur-[150px] rounded-full" />
                 </div>
 
                 <div className="container mx-auto px-4 relative z-10">

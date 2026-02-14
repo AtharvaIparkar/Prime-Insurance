@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { StatCounter } from './StatCounter';
+import ScrollReveal from './ScrollReveal';
 
 export const Hero = () => {
     return (
@@ -12,52 +13,62 @@ export const Hero = () => {
 
             <div className="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div className="space-y-8">
-                    <div className="inline-flex items-center space-x-2 bg-primary/5 border border-primary/10 px-4 py-2 rounded-full">
-                        <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse" />
-                        <span className="text-sm font-semibold text-primary uppercase tracking-wider">🏥 India&apos;s Leading Hospital Consultant</span>
-                    </div>
-
-                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-hospital-slate leading-[1.1]">
-                        Hospital & Healthcare <span className="text-primary italic">Consultation</span> Service
-                    </h1>
-
-                    <div className="space-y-4">
-                        <p className="text-lg sm:text-xl md:text-2xl font-black text-[#2563EB] uppercase tracking-[0.2em]">Consultancy Excellence</p>
-                        <p className="text-base sm:text-lg md:text-xl text-[#334155] leading-relaxed max-w-xl italic font-medium">
-                            &quot;Transforming Healthcare, One Hospital at a Time&quot;
-                        </p>
-                    </div>
-
-                    <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4">
-                        <Link
-                            href="/contact"
-                            className="w-full sm:w-auto bg-primary text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-primary-dark transition-all shadow-lg hover:shadow-primary/30 text-center"
-                        >
-                            Contact Us
-                        </Link>
-                        <Link
-                            href="/services"
-                            className="w-full sm:w-auto bg-white border border-gray-200 text-hospital-slate px-8 py-4 rounded-xl font-bold text-lg hover:border-primary/50 transition-all text-center"
-                        >
-                            Our Services
-                        </Link>
-                    </div>
-
-                    <div className="flex items-center space-x-8 pt-4">
-                        <div>
-                            <p className="text-3xl font-bold text-primary">
-                                <StatCounter end={7} suffix="+" />
-                            </p>
-                            <p className="text-sm font-medium text-gray-500 uppercase">Years Experience</p>
+                    <ScrollReveal animation="fade" duration={600}>
+                        <div className="inline-flex items-center space-x-2 bg-primary/5 border border-primary/10 px-4 py-2 rounded-full">
+                            <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse" />
+                            <span className="text-sm font-semibold text-primary uppercase tracking-wider">🏥 India&apos;s Leading Hospital Consultant</span>
                         </div>
-                        <div className="w-px h-12 bg-gray-200" />
-                        <div>
-                            <p className="text-3xl font-bold text-primary">
-                                <StatCounter end={150} suffix="+" />
+                    </ScrollReveal>
+
+                    <ScrollReveal animation="slide-up" delay={200}>
+                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-hospital-slate leading-[1.1]">
+                            Hospital & Healthcare <span className="text-primary italic">Consultation</span> Service
+                        </h1>
+                    </ScrollReveal>
+
+                    <ScrollReveal animation="slide-up" delay={400}>
+                        <div className="space-y-4">
+                            <p className="text-lg sm:text-xl md:text-2xl font-black text-[#2563EB] uppercase tracking-[0.2em]">Consultancy Excellence</p>
+                            <p className="text-base sm:text-lg md:text-xl text-[#334155] leading-relaxed max-w-xl italic font-medium">
+                                &quot;Transforming Healthcare, One Hospital at a Time&quot;
                             </p>
-                            <p className="text-sm font-medium text-gray-500 uppercase">Hospitals Cashless tieup's</p>
                         </div>
-                    </div>
+                    </ScrollReveal>
+
+                    <ScrollReveal animation="fade" delay={600}>
+                        <div className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4">
+                            <Link
+                                href="/contact"
+                                className="w-full sm:w-auto bg-primary text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-primary-dark transition-all shadow-lg hover:shadow-primary/30 text-center"
+                            >
+                                Contact Us
+                            </Link>
+                            <Link
+                                href="/services"
+                                className="w-full sm:w-auto bg-white border border-gray-200 text-hospital-slate px-8 py-4 rounded-xl font-bold text-lg hover:border-primary/50 transition-all text-center"
+                            >
+                                Our Services
+                            </Link>
+                        </div>
+                    </ScrollReveal>
+
+                    <ScrollReveal animation="slide-up" delay={800}>
+                        <div className="flex items-center space-x-8 pt-4">
+                            <div>
+                                <p className="text-3xl font-bold text-primary">
+                                    <StatCounter end={7} suffix="+" />
+                                </p>
+                                <p className="text-sm font-medium text-gray-500 uppercase">Years Experience</p>
+                            </div>
+                            <div className="w-px h-12 bg-gray-200" />
+                            <div>
+                                <p className="text-3xl font-bold text-primary">
+                                    <StatCounter end={150} suffix="+" />
+                                </p>
+                                <p className="text-sm font-medium text-gray-500 uppercase">Hospitals Cashless tieup's</p>
+                            </div>
+                        </div>
+                    </ScrollReveal>
                 </div>
 
                 <div className="relative hidden lg:block">
@@ -77,13 +88,13 @@ export const Hero = () => {
                                     className="object-cover"
                                 />
                                 {/* Healthcare Overlay */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-[#6B8EBF]/30 via-transparent to-transparent" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#1E293B]/40 via-transparent to-transparent" />
                             </div>
                         </div>
 
                         {/* Rajgurunagar Trust Bar */}
                         <div className="absolute bottom-6 left-0 right-0 px-8">
-                            <div className="bg-[#6B8EBF]/90 backdrop-blur-xl border border-white/20 p-6 rounded-2xl flex items-center space-x-5 shadow-lg">
+                            <div className="bg-[#1E293B]/90 backdrop-blur-xl border border-white/20 p-6 rounded-2xl flex items-center space-x-5 shadow-lg">
                                 <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center text-white">
                                     <span className="text-2xl">📍</span>
                                 </div>

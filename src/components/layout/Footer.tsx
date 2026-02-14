@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 export const Footer = () => {
     return (
-        <footer className="bg-[#6B8EBF] text-white pt-20 pb-12 relative overflow-hidden">
+        <footer className="bg-[#1E293B] text-white pt-20 pb-12 relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-full opacity-10">
                 <div className="absolute top-[-20%] right-[-10%] w-[60%] h-[100%] bg-primary blur-[120px] rounded-full" />
                 <div className="absolute bottom-[-20%] left-[-10%] w-[60%] h-[100%] bg-secondary blur-[120px] rounded-full" />
@@ -36,6 +36,8 @@ export const Footer = () => {
                         <li><Link href="/about" className="text-white hover:text-[#EEF4FF] transition-colors font-bold opacity-80 hover:opacity-100">About Us</Link></li>
                         <li><Link href="/services" className="text-white hover:text-[#EEF4FF] transition-colors font-bold opacity-80 hover:opacity-100">Services</Link></li>
                         <li><Link href="/contact" className="text-white hover:text-[#EEF4FF] transition-colors font-bold opacity-80 hover:opacity-100">Contact Us</Link></li>
+                        <li><Link href="/feedback" className="text-white hover:text-[#EEF4FF] transition-colors font-bold opacity-80 hover:opacity-100">Give Feedback</Link></li>
+                        <li><Link href="/reviews" className="text-white hover:text-[#EEF4FF] transition-colors font-bold opacity-80 hover:opacity-100">Success Stories</Link></li>
                     </ul>
                 </div>
 

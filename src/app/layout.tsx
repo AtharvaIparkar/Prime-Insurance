@@ -6,6 +6,7 @@ import { Footer } from "@/components/layout/Footer";
 import { FloatingCallButton } from "@/components/ui/FloatingContactButton";
 import { FloatingWhatsAppButton } from "@/components/ui/FloatingWhatsAppButton";
 import { constructMetadata } from "@/lib/seo";
+import CookieConsent from "@/components/CookieConsent";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -32,6 +33,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <CookieConsent />
         <div className="fixed bottom-8 right-8 z-50 flex flex-row items-center space-x-2">
           <FloatingWhatsAppButton />
           <FloatingCallButton />

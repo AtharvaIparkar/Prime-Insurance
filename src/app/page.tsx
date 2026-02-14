@@ -114,7 +114,7 @@ export default function Home() {
       <FAQSection />
 
       {/* Final CTA */}
-      <section className="py-24 bg-[#6B8EBF] relative overflow-hidden">
+      <section className="py-24 bg-[#1E293B] relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-[-10%] right-[-10%] w-[50%] h-[100%] bg-primary blur-[120px] rounded-full" />
         </div>

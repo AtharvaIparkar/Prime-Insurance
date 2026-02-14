@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { INDIAN_STATES, INDIAN_DISTRICTS } from "@/constants/states-districts";
+import ScrollReveal from "@/components/ui/ScrollReveal";
 
 // ─── Form field types ───────────────────────────────────────────────────────
 interface FormData {
@@ -175,21 +176,25 @@ export default function ContactPage() {
 
     return (
         <div className="flex flex-col">
-            {/* Dark Header Section - Lighter Refined Palette */}
-            <section className="bg-[#6B8EBF] py-24 relative overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none">
-                    <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[100%] bg-primary blur-[120px] rounded-full" />
-                    <div className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[100%] bg-secondary blur-[120px] rounded-full" />
+            {/* Premium Header Section - Refined Dark Palette */}
+            <section className="bg-[#1E293B] py-24 relative overflow-hidden">
+                <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+                    <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[100%] bg-primary blur-[150px] rounded-full" />
+                    <div className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[100%] bg-blue-400/20 blur-[150px] rounded-full" />
                 </div>
 
                 <div className="container mx-auto px-4 relative z-10">
                     <div className="max-w-5xl mx-auto text-center mb-10 space-y-6">
-                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tighter uppercase">
-                            Let&apos;s <span className="text-primary italic">Talk</span> Healthcare
-                        </h1>
-                        <p className="text-lg sm:text-xl md:text-2xl text-white font-bold max-w-3xl mx-auto opacity-90 tracking-tight">
-                            Partner with us for excellence in hospital planning and advisory services.
-                        </p>
+                        <ScrollReveal animation="fade">
+                            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white tracking-tighter uppercase">
+                                Let&apos;s <span className="text-primary italic">Talk</span> Healthcare
+                            </h1>
+                        </ScrollReveal>
+                        <ScrollReveal animation="slide-up" delay={200}>
+                            <p className="text-lg sm:text-xl md:text-2xl text-white font-bold max-w-3xl mx-auto opacity-90 tracking-tight">
+                                Partner with us for excellence in hospital planning and advisory services.
+                            </p>
+                        </ScrollReveal>
                     </div>
                 </div>
             </section>
@@ -201,232 +206,224 @@ export default function ContactPage() {
                         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
                             {/* Contact Info */}
                             <div className="lg:col-span-1 space-y-8">
-                                <div className="bg-gray-50 p-8 md:p-12 rounded-[2.5rem] border border-gray-100 shadow-sm space-y-8">
-                                    <div className="flex items-start space-x-4">
-                                        <div className="w-12 h-12 bg-[#3B82F6]/5 rounded-xl flex items-center justify-center text-[#3B82F6] text-xl border border-[#3B82F6]/10">📍</div>
-                                        <div>
-                                            <p className="font-black text-[#3B82F6] uppercase tracking-[0.2em] text-[10px] mb-1">Office Location</p>
-                                            <p className="text-[#1E293B] font-bold text-sm">Rajgurunagar, Pune, Maharashtra 410505</p>
+                                <ScrollReveal animation="slide-right">
+                                    <div className="bg-gray-50 p-8 md:p-12 rounded-[2.5rem] border border-gray-100 shadow-sm space-y-8">
+                                        <div className="flex items-start space-x-4">
+                                            <div className="w-12 h-12 bg-[#3B82F6]/5 rounded-xl flex items-center justify-center text-[#3B82F6] text-xl border border-[#3B82F6]/10">📍</div>
+                                            <div>
+                                                <p className="font-black text-[#3B82F6] uppercase tracking-[0.2em] text-[10px] mb-1">Office Location</p>
+                                                <p className="text-[#1E293B] font-bold text-sm">Rajgurunagar, Pune, Maharashtra 410505</p>
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    <div className="flex items-start space-x-4">
-                                        <div className="w-12 h-12 bg-[#3B82F6]/5 rounded-xl flex items-center justify-center text-[#3B82F6] text-xl border border-[#3B82F6]/10">📧</div>
-                                        <div>
-                                            <p className="font-black text-[#3B82F6] uppercase tracking-[0.2em] text-[10px] mb-1">Direct Mail</p>
-                                            <p className="text-[#1E293B] font-bold text-sm break-all">primeinsuranceservicespune@gmail.com</p>
+                                        <div className="flex items-start space-x-4">
+                                            <div className="w-12 h-12 bg-[#3B82F6]/5 rounded-xl flex items-center justify-center text-[#3B82F6] text-xl border border-[#3B82F6]/10">📧</div>
+                                            <div>
+                                                <p className="font-black text-[#3B82F6] uppercase tracking-[0.2em] text-[10px] mb-1">Direct Mail</p>
+                                                <p className="text-[#1E293B] font-bold text-sm break-all">primeinsuranceservicespune@gmail.com</p>
+                                            </div>
                                         </div>
-                                    </div>
 
-                                    <div className="flex items-start space-x-4">
-                                        <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center text-green-600 text-xl font-bold">WA</div>
-                                        <div>
-                                            <p className="font-black text-[#3B82F6] uppercase tracking-[0.2em] text-[10px] mb-1">Social Chat</p>
-                                            <p className="text-[#1E293B] font-bold text-sm">+91 74208 02527</p>
+                                        <div className="flex items-start space-x-4">
+                                            <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center text-green-600 text-xl font-bold">WA</div>
+                                            <div>
+                                                <p className="font-black text-[#3B82F6] uppercase tracking-[0.2em] text-[10px] mb-1">Social Chat</p>
+                                                <p className="text-[#1E293B] font-bold text-sm">+91 74208 02527</p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </ScrollReveal>
                             </div>
 
                             {/* Premium Consultation Form */}
-                            <div className="lg:col-span-2 bg-[#6B8EBF] p-10 md:p-16 rounded-[4rem] text-white shadow-xl relative overflow-hidden border border-white/10">
-                                <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#3B82F6]/10 blur-[130px] -z-0" />
-                                <div className="relative z-10">
-                                    <h3 className="text-3xl font-black mb-8 uppercase tracking-tight">
-                                        Request <span className="text-primary italic">Consultation</span>
-                                    </h3>
+                            <div className="lg:col-span-2">
+                                <ScrollReveal animation="slide-left" delay={400}>
+                                    <div className="bg-[#1E293B] p-10 md:p-16 rounded-[4rem] text-white shadow-xl relative overflow-hidden border border-white/10 h-full">
+                                        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#3B82F6] opacity-10 blur-[130px] -z-0" />
+                                        <div className="relative z-10">
+                                            <h3 className="text-3xl font-black mb-8 uppercase tracking-tight">
+                                                Request <span className="text-primary italic">Consultation</span>
+                                            </h3>
 
-                                    {/* Status Messages */}
-                                    {submitStatus === "success" && (
-                                        <div className="mb-6 p-4 bg-green-500/20 border border-green-400/30 rounded-2xl text-green-300 font-bold text-sm flex items-center gap-3">
-                                            <span className="text-xl">✅</span>
-                                            {statusMessage}
-                                        </div>
-                                    )}
-                                    {submitStatus === "error" && !Object.keys(errors).length && (
-                                        <div className="mb-6 p-4 bg-red-500/20 border border-red-400/30 rounded-2xl text-red-300 font-bold text-sm flex items-center gap-3">
-                                            <span className="text-xl">⚠️</span>
-                                            {statusMessage}
-                                        </div>
-                                    )}
-
-                                    <form className="space-y-6" onSubmit={handleSubmit} noValidate>
-                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                            {/* Name */}
-                                            <div>
-                                                <input
-                                                    type="text"
-                                                    name="name"
-                                                    value={formData.name}
-                                                    onChange={handleChange}
-                                                    placeholder="Your Name"
-                                                    className={`w-full bg-white/10 border ${errors.name || errors.email || errors.phone || errors.hospitalName || errors.message ? "border-red-400" : "border-white/20"} p-5 rounded-2xl focus:outline-none focus:border-[#2563EB] transition-colors text-white font-bold placeholder:text-[#D1D9E6]/50`}
-                                                />
-                                                {errors.name && <p className="mt-2 text-red-400 text-xs font-bold">{errors.name}</p>}
-                                            </div>
-
-                                            {/* Email */}
-                                            <div>
-                                                <input
-                                                    type="email"
-                                                    name="email"
-                                                    value={formData.email}
-                                                    onChange={handleChange}
-                                                    placeholder="Email Address"
-                                                    className={`w-full bg-white/10 border ${errors.email ? "border-red-400" : "border-white/20"} p-5 rounded-2xl focus:outline-none focus:border-[#2563EB] transition-colors text-white font-bold placeholder:text-[#D1D9E6]/50`}
-                                                />
-                                                {errors.email && <p className="mt-2 text-red-400 text-xs font-bold">{errors.email}</p>}
-                                            </div>
-                                        </div>
-
-                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                            {/* Phone */}
-                                            <div>
-                                                <input
-                                                    type="tel"
-                                                    name="phone"
-                                                    value={formData.phone}
-                                                    onChange={handleChange}
-                                                    placeholder="Phone Number"
-                                                    className={`w-full bg-white/10 border ${errors.phone ? "border-red-400" : "border-white/20"} p-5 rounded-2xl focus:outline-none focus:border-[#2563EB] transition-colors text-white font-bold placeholder:text-[#D1D9E6]/50`}
-                                                />
-                                                {errors.phone && <p className="mt-2 text-red-400 text-xs font-bold">{errors.phone}</p>}
-                                            </div>
-
-                                            {/* Preferred Date */}
-                                            <div>
-                                                <input
-                                                    type="date"
-                                                    name="preferredDate"
-                                                    value={formData.preferredDate}
-                                                    onChange={handleChange}
-                                                    className="w-full bg-white/10 border border-white/20 p-5 rounded-2xl focus:outline-none focus:border-[#2563EB] transition-colors text-white font-bold placeholder:text-[#D1D9E6]/50"
-                                                />
-                                            </div>
-                                        </div>
-
-                                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                                            {/* State */}
-                                            <div>
-                                                <select
-                                                    name="state"
-                                                    value={formData.state}
-                                                    onChange={handleStateChange}
-                                                    className={`w-full bg-white/10 border ${errors.state ? "border-red-400" : "border-white/20"} p-5 rounded-2xl focus:outline-none focus:border-[#2563EB] transition-colors text-white font-bold`}
-                                                >
-                                                    <option className="bg-[#6B8EBF]" value="">Select State</option>
-                                                    {INDIAN_STATES.map((state) => (
-                                                        <option key={state.code} className="bg-[#6B8EBF]" value={state.code}>
-                                                            {state.name}
-                                                        </option>
-                                                    ))}
-                                                </select>
-                                                {errors.state && <p className="mt-2 text-red-400 text-xs font-bold">{errors.state}</p>}
-                                            </div>
-
-                                            {/* District */}
-                                            <div>
-                                                <select
-                                                    name="district"
-                                                    value={formData.district}
-                                                    onChange={handleChange}
-                                                    disabled={!formData.state}
-                                                    className={`w-full bg-white/10 border ${errors.district ? "border-red-400" : "border-white/20"} p-5 rounded-2xl focus:outline-none focus:border-[#2563EB] transition-colors text-white font-bold disabled:opacity-50 disabled:cursor-not-allowed`}
-                                                >
-                                                    <option className="bg-[#6B8EBF]" value="">
-                                                        {!formData.state ? "Select State First" : "Select District"}
-                                                    </option>
-                                                    {formData.state && INDIAN_DISTRICTS[formData.state]?.map((district) => (
-                                                        <option key={district} className="bg-[#6B8EBF]" value={district}>
-                                                            {district}
-                                                        </option>
-                                                    ))}
-                                                </select>
-                                                {errors.district && <p className="mt-2 text-red-400 text-xs font-bold">{errors.district}</p>}
-                                            </div>
-
-                                            {/* Pincode - NEW */}
-                                            <div>
-                                                <input
-                                                    type="text"
-                                                    name="pincode"
-                                                    value={formData.pincode}
-                                                    onChange={handleChange}
-                                                    placeholder="6-digit Pincode"
-                                                    maxLength={6}
-                                                    className={`w-full bg-white/10 border ${errors.pincode ? "border-red-400" : "border-white/20"} p-5 rounded-2xl focus:outline-none focus:border-[#2563EB] transition-colors text-white font-bold placeholder:text-[#D1D9E6]/50`}
-                                                />
-                                                {errors.pincode && <p className="mt-2 text-red-400 text-xs font-bold">{errors.pincode}</p>}
-                                            </div>
-                                        </div>
-
-                                        {/* Hospital Name - MOVED UP */}
-                                        <div>
-                                            <input
-                                                type="text"
-                                                name="hospitalName"
-                                                value={formData.hospitalName}
-                                                onChange={handleChange}
-                                                placeholder="Hospital Name"
-                                                className={`w-full bg-white/10 border ${errors.hospitalName ? "border-red-400" : "border-white/20"} p-5 rounded-2xl focus:outline-none focus:border-[#2563EB] transition-colors text-white font-bold placeholder:text-[#D1D9E6]/50`}
-                                            />
-                                            {errors.hospitalName && <p className="mt-2 text-red-400 text-xs font-bold">{errors.hospitalName}</p>}
-                                        </div>
-
-                                        {/* Service Selector - MOVED DOWN */}
-                                        <div>
-                                            <select
-                                                name="service"
-                                                value={formData.service}
-                                                onChange={handleChange}
-                                                className={`w-full bg-white/5 border ${errors.service ? "border-red-400" : "border-white/10"} p-5 rounded-2xl focus:outline-none focus:border-[#3B82F6] transition-all text-white font-bold outline-none`}
-                                            >
-                                                <option className="bg-[#6B8EBF]" value="">Select Service Required</option>
-                                                <option className="bg-[#6B8EBF]" value="Insurance & TPA Cashless Empanelment">Insurance & TPA Cashless Empanelment</option>
-                                                <option className="bg-[#6B8EBF]" value="NABH and NABL Accreditation">NABH and NABL Accreditation</option>
-                                                <option className="bg-[#6B8EBF]" value="Cashless Management">Cashless Management</option>
-                                                <option className="bg-[#6B8EBF]" value="IT Solutions">IT Solutions</option>
-                                                <option className="bg-[#6B8EBF]" value="Hospital Marketing">Hospital Marketing</option>
-                                            </select>
-                                            {errors.service && <p className="mt-2 text-red-400 text-xs font-bold">{errors.service}</p>}
-                                        </div>
-
-                                        {/* Message */}
-                                        <div>
-                                            <textarea
-                                                name="message"
-                                                value={formData.message}
-                                                onChange={handleChange}
-                                                placeholder="Describe your hospital's needs..."
-                                                rows={4}
-                                                className={`w-full bg-white/10 border ${errors.message ? "border-red-400" : "border-white/20"} p-5 rounded-2xl focus:outline-none focus:border-[#2563EB] transition-colors text-white font-bold placeholder:text-[#D1D9E6]/50`}
-                                            />
-                                            {errors.message && <p className="mt-2 text-red-400 text-xs font-bold">{errors.message}</p>}
-                                        </div>
-
-                                        {/* Submit Button */}
-                                        <button
-                                            type="submit"
-                                            disabled={isSubmitting}
-                                            className={`w-full py-5 rounded-2xl font-black text-xl uppercase tracking-widest transition-all shadow-[0_20px_40px_rgba(37,99,235,0.2)] ${isSubmitting
-                                                ? "bg-[#2563EB]/50 cursor-not-allowed scale-100"
-                                                : "bg-[#2563EB] hover:scale-[1.02] cursor-pointer"
-                                                }`}
-                                        >
-                                            {isSubmitting ? (
-                                                <span className="flex items-center justify-center gap-3">
-                                                    <svg className="animate-spin h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                                                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                                                    </svg>
-                                                    Submitting...
-                                                </span>
-                                            ) : (
-                                                "Book Consultation"
+                                            {/* Status Messages */}
+                                            {submitStatus === "success" && (
+                                                <div className="mb-6 p-4 bg-green-500/20 border border-green-400/30 rounded-2xl text-green-300 font-bold text-sm flex items-center gap-3">
+                                                    <span className="text-xl">✅</span>
+                                                    {statusMessage}
+                                                </div>
                                             )}
-                                        </button>
-                                    </form>
-                                </div>
+                                            {submitStatus === "error" && !Object.keys(errors).length && (
+                                                <div className="mb-6 p-4 bg-red-500/20 border border-red-400/30 rounded-2xl text-red-300 font-bold text-sm flex items-center gap-3">
+                                                    <span className="text-xl">⚠️</span>
+                                                    {statusMessage}
+                                                </div>
+                                            )}
+
+                                            <form className="space-y-6" onSubmit={handleSubmit} noValidate>
+                                                {/* Form Fields ... */}
+                                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                                    <div>
+                                                        <input
+                                                            type="text"
+                                                            name="name"
+                                                            value={formData.name}
+                                                            onChange={handleChange}
+                                                            placeholder="Your Name"
+                                                            className={`w-full bg-white/10 border ${errors.name || errors.email || errors.phone || errors.hospitalName || errors.message ? "border-red-400" : "border-white/20"} p-5 rounded-2xl focus:outline-none focus:border-[#2563EB] transition-colors text-white font-bold placeholder:text-[#D1D9E6]/50`}
+                                                        />
+                                                        {errors.name && <p className="mt-2 text-red-400 text-xs font-bold">{errors.name}</p>}
+                                                    </div>
+                                                    <div>
+                                                        <input
+                                                            type="email"
+                                                            name="email"
+                                                            value={formData.email}
+                                                            onChange={handleChange}
+                                                            placeholder="Email Address"
+                                                            className={`w-full bg-white/10 border ${errors.email ? "border-red-400" : "border-white/20"} p-5 rounded-2xl focus:outline-none focus:border-[#2563EB] transition-colors text-white font-bold placeholder:text-[#D1D9E6]/50`}
+                                                        />
+                                                        {errors.email && <p className="mt-2 text-red-400 text-xs font-bold">{errors.email}</p>}
+                                                    </div>
+                                                </div>
+
+                                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                                    <div>
+                                                        <input
+                                                            type="tel"
+                                                            name="phone"
+                                                            value={formData.phone}
+                                                            onChange={handleChange}
+                                                            placeholder="Phone Number"
+                                                            className={`w-full bg-white/10 border ${errors.phone ? "border-red-400" : "border-white/20"} p-5 rounded-2xl focus:outline-none focus:border-[#2563EB] transition-colors text-white font-bold placeholder:text-[#D1D9E6]/50`}
+                                                        />
+                                                        {errors.phone && <p className="mt-2 text-red-400 text-xs font-bold">{errors.phone}</p>}
+                                                    </div>
+                                                    <div>
+                                                        <input
+                                                            type="date"
+                                                            name="preferredDate"
+                                                            value={formData.preferredDate}
+                                                            onChange={handleChange}
+                                                            className="w-full bg-white/10 border border-white/20 p-5 rounded-2xl focus:outline-none focus:border-[#2563EB] transition-colors text-white font-bold placeholder:text-[#D1D9E6]/50"
+                                                        />
+                                                    </div>
+                                                </div>
+
+                                                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                                    <div>
+                                                        <select
+                                                            name="state"
+                                                            value={formData.state}
+                                                            onChange={handleStateChange}
+                                                            className={`w-full bg-white/10 border ${errors.state ? "border-red-400" : "border-white/20"} p-5 rounded-2xl focus:outline-none focus:border-[#2563EB] transition-colors text-white font-bold`}
+                                                        >
+                                                            <option className="bg-[#1E293B]" value="">Select State</option>
+                                                            {INDIAN_STATES.map((state) => (
+                                                                <option key={state.code} className="bg-[#1E293B]" value={state.code}>
+                                                                    {state.name}
+                                                                </option>
+                                                            ))}
+                                                        </select>
+                                                        {errors.state && <p className="mt-2 text-red-400 text-xs font-bold">{errors.state}</p>}
+                                                    </div>
+                                                    <div>
+                                                        <select
+                                                            name="district"
+                                                            value={formData.district}
+                                                            onChange={handleChange}
+                                                            disabled={!formData.state}
+                                                            className={`w-full bg-white/10 border ${errors.district ? "border-red-400" : "border-white/20"} p-5 rounded-2xl focus:outline-none focus:border-[#2563EB] transition-colors text-white font-bold disabled:opacity-50 disabled:cursor-not-allowed`}
+                                                        >
+                                                            <option className="bg-[#1E293B]" value="">
+                                                                {!formData.state ? "Select State First" : "Select District"}
+                                                            </option>
+                                                            {formData.state && INDIAN_DISTRICTS[formData.state]?.map((district) => (
+                                                                <option key={district} className="bg-[#1E293B]" value={district}>
+                                                                    {district}
+                                                                </option>
+                                                            ))}
+                                                        </select>
+                                                        {errors.district && <p className="mt-2 text-red-400 text-xs font-bold">{errors.district}</p>}
+                                                    </div>
+                                                    <div>
+                                                        <input
+                                                            type="text"
+                                                            name="pincode"
+                                                            value={formData.pincode}
+                                                            onChange={handleChange}
+                                                            placeholder="6-digit Pincode"
+                                                            maxLength={6}
+                                                            className={`w-full bg-white/10 border ${errors.pincode ? "border-red-400" : "border-white/20"} p-5 rounded-2xl focus:outline-none focus:border-[#2563EB] transition-colors text-white font-bold placeholder:text-[#D1D9E6]/50`}
+                                                        />
+                                                        {errors.pincode && <p className="mt-2 text-red-400 text-xs font-bold">{errors.pincode}</p>}
+                                                    </div>
+                                                </div>
+
+                                                <div>
+                                                    <input
+                                                        type="text"
+                                                        name="hospitalName"
+                                                        value={formData.hospitalName}
+                                                        onChange={handleChange}
+                                                        placeholder="Hospital Name"
+                                                        className={`w-full bg-white/10 border ${errors.hospitalName ? "border-red-400" : "border-white/20"} p-5 rounded-2xl focus:outline-none focus:border-[#2563EB] transition-colors text-white font-bold placeholder:text-[#D1D9E6]/50`}
+                                                    />
+                                                    {errors.hospitalName && <p className="mt-2 text-red-400 text-xs font-bold">{errors.hospitalName}</p>}
+                                                </div>
+
+                                                <div>
+                                                    <select
+                                                        name="service"
+                                                        value={formData.service}
+                                                        onChange={handleChange}
+                                                        className={`w-full bg-white/5 border ${errors.service ? "border-red-400" : "border-white/10"} p-5 rounded-2xl focus:outline-none focus:border-[#3B82F6] transition-all text-white font-bold outline-none`}
+                                                    >
+                                                        <option className="bg-[#1E293B]" value="">Select Service Required</option>
+                                                        <option className="bg-[#1E293B]" value="Insurance & TPA Cashless Empanelment">Insurance & TPA Cashless Empanelment</option>
+                                                        <option className="bg-[#1E293B]" value="NABH and NABL Accreditation">NABH and NABL Accreditation</option>
+                                                        <option className="bg-[#1E293B]" value="Cashless Management">Cashless Management</option>
+                                                        <option className="bg-[#1E293B]" value="IT Solutions">IT Solutions</option>
+                                                        <option className="bg-[#1E293B]" value="Hospital Marketing">Hospital Marketing</option>
+                                                    </select>
+                                                    {errors.service && <p className="mt-2 text-red-400 text-xs font-bold">{errors.service}</p>}
+                                                </div>
+
+                                                <div>
+                                                    <textarea
+                                                        name="message"
+                                                        value={formData.message}
+                                                        onChange={handleChange}
+                                                        placeholder="Describe your hospital's needs..."
+                                                        rows={4}
+                                                        className={`w-full bg-white/10 border ${errors.message ? "border-red-400" : "border-white/20"} p-5 rounded-2xl focus:outline-none focus:border-[#2563EB] transition-colors text-white font-bold placeholder:text-[#D1D9E6]/50`}
+                                                    />
+                                                    {errors.message && <p className="mt-2 text-red-400 text-xs font-bold">{errors.message}</p>}
+                                                </div>
+
+                                                <button
+                                                    type="submit"
+                                                    disabled={isSubmitting}
+                                                    className={`w-full py-5 rounded-2xl font-black text-xl uppercase tracking-widest transition-all shadow-[0_20px_40px_rgba(37,99,235,0.2)] ${isSubmitting
+                                                        ? "bg-[#2563EB]/50 cursor-not-allowed scale-100"
+                                                        : "bg-[#2563EB] hover:scale-[1.02] cursor-pointer"
+                                                        }`}
+                                                >
+                                                    {isSubmitting ? (
+                                                        <span className="flex items-center justify-center gap-3">
+                                                            <svg className="animate-spin h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                                                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                                                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                                            </svg>
+                                                            Submitting...
+                                                        </span>
+                                                    ) : (
+                                                        "Book Consultation"
+                                                    )}
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </ScrollReveal>
                             </div>
                         </div>
                     </div>
