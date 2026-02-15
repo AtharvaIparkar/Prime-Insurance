@@ -10,7 +10,7 @@ export default function ReviewsPage() {
                 <div className="flex flex-col md:flex-row justify-between items-center gap-8">
                     <div className="text-center md:text-left space-y-4">
                         <h2 className="text-[#2563EB] font-black uppercase tracking-[0.4em] text-xs">Community Proof</h2>
-                        <h1 className="text-4xl md:text-6xl font-black text-[#2872A1] tracking-tighter uppercase">Verified <span className="text-[#2563EB] italic">Experiences</span></h1>
+                        <h1 className="text-4xl md:text-6xl font-black text-[#2872A1] tracking-tighter uppercase">Experiences</h1>
                     </div>
                     <Link
                         href="/feedback"

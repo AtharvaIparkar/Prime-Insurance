@@ -58,8 +58,8 @@ export async function POST(request: NextRequest) {
             reviewText: body.reviewText,
             wouldRecommend: body.wouldRecommend,
             email: body.email,
-            status: 'pending',
-            verified: false,
+            status: 'approved',
+            verified: true,
         });
 
         return NextResponse.json(
@@ -72,5 +72,56 @@ export async function POST(request: NextRequest) {
     } catch (error) {
         console.error('Error creating review:', error);
         return NextResponse.json({ error: 'Failed to submit review' }, { status: 500 });
+    }
+}
+
+// PATCH - Update review status (admin only)
+export async function PATCH(request: NextRequest) {
+    try {
+        // Auth check
+        const { cookies } = await import('next/headers');
+        const cookieStore = await cookies();
+        const isAuthenticated = cookieStore.get('admin_session')?.value === 'authenticated';
+
+        const authHeader = request.headers.get('authorization');
+        const apiKey = process.env.ADMIN_API_KEY;
+        const hasValidApiKey = apiKey && authHeader === `Bearer ${apiKey}`;
+
+        if (!hasValidApiKey && !isAuthenticated) {
+            return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+        }
+
+        await connectDB();
+
+        const body = await request.json();
+        const { id, status } = body;
+
+        if (!id || !status) {
+            return NextResponse.json({ error: 'ID and status are required' }, { status: 400 });
+        }
+
+        const validStatuses = ['pending', 'approved', 'rejected'];
+        if (!validStatuses.includes(status)) {
+            return NextResponse.json({ error: 'Invalid status value' }, { status: 400 });
+        }
+
+        // Auto-set verified when approved
+        const updateData: any = { status };
+        if (status === 'approved') {
+            updateData.verified = true;
+        } else {
+            updateData.verified = false;
+        }
+
+        const review = await Review.findByIdAndUpdate(id, updateData, { new: true, runValidators: true });
+
+        if (!review) {
+            return NextResponse.json({ error: 'Review not found' }, { status: 404 });
+        }
+
+        return NextResponse.json({ success: true, message: 'Status updated successfully', data: review });
+    } catch (error) {
+        console.error('PATCH Error:', error);
+        return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
     }
 }

@@ -5,7 +5,7 @@ import Image from 'next/image';
 export const Footer = () => {
     return (
         <footer className="bg-[#2872A1] text-white pt-20 pb-12 relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-full opacity-10">
+            <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
                 <div className="absolute top-[-20%] right-[-10%] w-[60%] h-[100%] bg-primary blur-[120px] rounded-full" />
                 <div className="absolute bottom-[-20%] left-[-10%] w-[60%] h-[100%] bg-secondary blur-[120px] rounded-full" />
             </div>
@@ -32,12 +32,12 @@ export const Footer = () => {
                 <div>
                     <h4 className="text-white font-black uppercase tracking-widest text-xs mb-8">Quick Links</h4>
                     <ul className="space-y-4">
-                        <li><Link href="/" className="text-white hover:text-[#EEF4FF] transition-colors font-bold opacity-80 hover:opacity-100">Home</Link></li>
-                        <li><Link href="/about" className="text-white hover:text-[#EEF4FF] transition-colors font-bold opacity-80 hover:opacity-100">About Us</Link></li>
-                        <li><Link href="/services" className="text-white hover:text-[#EEF4FF] transition-colors font-bold opacity-80 hover:opacity-100">Services</Link></li>
-                        <li><Link href="/contact" className="text-white hover:text-[#EEF4FF] transition-colors font-bold opacity-80 hover:opacity-100">Contact Us</Link></li>
-                        <li><Link href="/feedback" className="text-white hover:text-[#EEF4FF] transition-colors font-bold opacity-80 hover:opacity-100">Give Feedback</Link></li>
-                        <li><Link href="/reviews" className="text-white hover:text-[#EEF4FF] transition-colors font-bold opacity-80 hover:opacity-100">Success Stories</Link></li>
+                        <li><Link href="/" className="text-white/80 hover:text-white transition-colors font-bold">Home</Link></li>
+                        <li><Link href="/about" className="text-white/80 hover:text-white transition-colors font-bold">About Us</Link></li>
+                        <li><Link href="/services" className="text-white/80 hover:text-white transition-colors font-bold">Services</Link></li>
+                        <li><Link href="/contact" className="text-white/80 hover:text-white transition-colors font-bold">Contact Us</Link></li>
+                        <li><Link href="/feedback" className="text-white/80 hover:text-white transition-colors font-bold">Give Feedback</Link></li>
+                        <li><Link href="/reviews" className="text-white/80 hover:text-white transition-colors font-bold">Success Stories</Link></li>
                     </ul>
                 </div>
 
@@ -45,10 +45,10 @@ export const Footer = () => {
                 <div>
                     <h4 className="text-white font-black uppercase tracking-widest text-xs mb-8">Specialized Services</h4>
                     <ul className="space-y-4">
-                        <li><Link href="/services/accreditation" className="text-white hover:text-[#EEF4FF] transition-colors font-bold opacity-80 hover:opacity-100">Accreditation</Link></li>
-                        <li><Link href="/services/cashless-management" className="text-white hover:text-[#EEF4FF] transition-colors font-bold opacity-80 hover:opacity-100">Cashless Management</Link></li>
-                        <li><Link href="/services/empanelments" className="text-white hover:text-[#EEF4FF] transition-colors font-bold opacity-80 hover:opacity-100">Hospital Empanelment</Link></li>
-                        <li><Link href="/services/it-solution" className="text-white hover:text-[#EEF4FF] transition-colors font-bold opacity-80 hover:opacity-100">IT Solutions</Link></li>
+                        <li><Link href="/services/accreditation" className="text-white/80 hover:text-white transition-colors font-bold">Accreditation</Link></li>
+                        <li><Link href="/services/cashless-management" className="text-white/80 hover:text-white transition-colors font-bold">Cashless Management</Link></li>
+                        <li><Link href="/services/empanelments" className="text-white/80 hover:text-white transition-colors font-bold">Hospital Empanelment</Link></li>
+                        <li><Link href="/services/it-solution" className="text-white/80 hover:text-white transition-colors font-bold">IT Solutions</Link></li>
                     </ul>
                 </div>
 
