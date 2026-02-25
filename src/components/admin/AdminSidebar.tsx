@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -38,7 +38,16 @@ const adminLinks = [
 
 export default function AdminSidebar() {
     const [isOpen, setIsOpen] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
     const pathname = usePathname();
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 20);
+        };
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
     const NavContent = () => (
         <>
@@ -73,7 +82,10 @@ export default function AdminSidebar() {
     return (
         <>
             {/* Desktop Sidebar */}
-            <aside className="hidden lg:flex flex-col w-72 bg-slate-950 border-r border-slate-900 sticky top-20 h-[calc(100vh-80px)] z-40 overflow-y-auto shadow-2xl">
+            <aside className="hidden lg:flex flex-col w-72 bg-slate-950 sticky top-0 h-screen pt-20 z-40 overflow-y-auto overflow-x-hidden">
+                {/* Dynamic Header Shield Overlay (Matches Header Scroll) */}
+                <div className={`absolute top-0 left-0 w-full h-20 bg-white transition-opacity duration-300 pointer-events-none z-10 ${isScrolled ? "opacity-0" : "opacity-100"}`} />
+
                 <NavContent />
             </aside>
 
