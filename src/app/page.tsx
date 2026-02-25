@@ -4,6 +4,7 @@ import Link from "next/link";
 import { StatCounter } from "@/components/ui/StatCounter";
 import Image from "next/image";
 import { FAQSection } from "@/components/ui/FAQSection";
+import ReviewsDisplay from "@/components/ReviewsDisplay";
 
 export default function Home() {
   return (
@@ -108,6 +109,11 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* Reviews Section */}
+      <section className="py-24 bg-white relative">
+        <ReviewsDisplay />
       </section>
 
       {/* FAQ Section */}

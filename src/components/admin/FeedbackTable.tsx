@@ -80,8 +80,8 @@ export default function FeedbackTable({ initialData }: Props) {
 
             </div>
 
-            {/* Table */}
-            <div className="overflow-x-auto">
+            {/* Desktop Table View */}
+            <div className="hidden md:block overflow-x-auto">
                 <table className="w-full text-left border-collapse">
                     <thead>
                         <tr className="bg-slate-50 text-slate-500 text-xs font-semibold uppercase tracking-wider">
@@ -145,9 +145,62 @@ export default function FeedbackTable({ initialData }: Props) {
                 </table>
             </div>
 
-            {/* Footer */}
-            <div className="px-6 py-4 border-t border-slate-100 bg-slate-50/50 flex items-center justify-between">
-                <p className="text-sm text-slate-500">
+            {/* Mobile Card View */}
+            <div className="md:hidden divide-y divide-slate-100">
+                {filteredData.length > 0 ? (
+                    filteredData.map((item) => (
+                        <div key={item._id} className="p-4 space-y-4">
+                            <div className="flex justify-between items-start">
+                                <div className="flex-1 min-w-0 pr-4">
+                                    <div className="font-bold text-slate-900 truncate">{item.name}</div>
+                                    <div className="text-xs text-slate-500 truncate">{item.hospitalName}</div>
+                                </div>
+                                <div className="shrink-0 text-right">
+                                    <StarRating rating={item.rating} />
+                                    <p className="text-[10px] text-slate-400 mt-1 font-bold italic" suppressHydrationWarning>
+                                        {new Date(item.createdAt).toLocaleDateString()}
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div className="bg-slate-50 rounded-xl p-3 border border-slate-100">
+                                <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Service: {item.serviceUsed}</p>
+                                <div className="font-bold text-slate-900 text-sm mb-1">{item.reviewTitle}</div>
+                                <div className={`text-xs text-slate-600 leading-relaxed ${expandedId === item._id ? '' : 'line-clamp-3'}`}>
+                                    {item.reviewText}
+                                </div>
+                                {item.reviewText.length > 80 && (
+                                    <button
+                                        onClick={() => setExpandedId(expandedId === item._id ? null : item._id)}
+                                        className="text-xs text-blue-600 hover:text-blue-800 mt-2 font-black uppercase tracking-tighter"
+                                    >
+                                        {expandedId === item._id ? "[ Show Less ]" : "[ Read Full Review ]"}
+                                    </button>
+                                )}
+                            </div>
+
+                            <div className="flex items-center justify-between text-[10px]">
+                                <div className="text-slate-400 font-bold uppercase tracking-tighter">
+                                    {item.email}
+                                </div>
+                                {item.wouldRecommend && (
+                                    <span className="flex items-center text-green-600 font-black uppercase tracking-widest bg-green-50 px-2 py-0.5 rounded-full border border-green-100">
+                                        ✓ Recommends
+                                    </span>
+                                )}
+                            </div>
+                        </div>
+                    ))
+                ) : (
+                    <div className="px-6 py-12 text-center text-slate-500">
+                        No feedback found.
+                    </div>
+                )}
+            </div>
+
+            {/* Pagination Placeholder */}
+            <div className="px-6 py-4 border-t border-slate-100 bg-slate-50/50">
+                <p className="text-sm text-slate-500 text-center md:text-left">
                     Showing <span className="font-medium text-slate-900">{filteredData.length}</span> results
                 </p>
             </div>

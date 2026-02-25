@@ -11,8 +11,8 @@ export const Footer = () => {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-12">
                 {/* Company Bio */}
-                <div className="space-y-6">
-                    <div className="flex items-center space-x-3">
+                <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-6">
+                    <div className="flex flex-col md:flex-row items-center md:items-start space-y-4 md:space-y-0 md:space-x-3">
                         <div className="relative w-10 h-10">
                             <Image
                                 src="/logo.png"
@@ -23,28 +23,28 @@ export const Footer = () => {
                         </div>
                         <h2 className="text-white font-black text-xl leading-none tracking-tighter uppercase">Prime <br />Insurance Services</h2>
                     </div>
-                    <p className="text-white font-bold leading-relaxed opacity-90">
+                    <p className="text-white font-bold leading-relaxed opacity-90 max-w-sm">
                         Empowering healthcare through expert empanelment and accreditation services. We bridge the gap between hospitals and world-class standards.
                     </p>
                 </div>
 
                 {/* Quick Links */}
-                <div>
+                <div className="flex flex-col items-center md:items-start text-center md:text-left">
                     <h4 className="text-white font-black uppercase tracking-widest text-xs mb-8">Quick Links</h4>
-                    <ul className="space-y-4">
+                    <ul className="space-y-4 flex flex-col items-center md:items-start">
                         <li><Link href="/" className="text-white/80 hover:text-white transition-colors font-bold">Home</Link></li>
                         <li><Link href="/about" className="text-white/80 hover:text-white transition-colors font-bold">About Us</Link></li>
                         <li><Link href="/services" className="text-white/80 hover:text-white transition-colors font-bold">Services</Link></li>
                         <li><Link href="/contact" className="text-white/80 hover:text-white transition-colors font-bold">Contact Us</Link></li>
                         <li><Link href="/feedback" className="text-white/80 hover:text-white transition-colors font-bold">Give Feedback</Link></li>
-                        <li><Link href="/reviews" className="text-white/80 hover:text-white transition-colors font-bold">Success Stories</Link></li>
+                        <li><Link href="/#reviews" className="text-white/80 hover:text-white transition-colors font-bold">Success Stories</Link></li>
                     </ul>
                 </div>
 
                 {/* Services */}
-                <div>
+                <div className="flex flex-col items-center md:items-start text-center md:text-left">
                     <h4 className="text-white font-black uppercase tracking-widest text-xs mb-8">Specialized Services</h4>
-                    <ul className="space-y-4">
+                    <ul className="space-y-4 flex flex-col items-center md:items-start">
                         <li><Link href="/services/accreditation" className="text-white/80 hover:text-white transition-colors font-bold">Accreditation</Link></li>
                         <li><Link href="/services/cashless-management" className="text-white/80 hover:text-white transition-colors font-bold">Cashless Management</Link></li>
                         <li><Link href="/services/empanelments" className="text-white/80 hover:text-white transition-colors font-bold">Hospital Empanelment</Link></li>
@@ -53,9 +53,9 @@ export const Footer = () => {
                 </div>
 
                 {/* Contact Info */}
-                <div>
+                <div className="flex flex-col items-center md:items-start text-center md:text-left">
                     <h4 className="text-white font-black uppercase tracking-widest text-xs mb-8">Connect With Us</h4>
-                    <ul className="space-y-4">
+                    <ul className="space-y-4 flex flex-col items-center md:items-start">
                         <li className="flex items-center space-x-3">
                             <span className="text-[#EEF4FF]">📍</span>
                             <span className="text-white font-bold text-sm">Pune/Rajgurunagar Region</span>
@@ -88,9 +88,9 @@ export const Footer = () => {
 
             <div className="pt-8 border-t border-white/10 text-center">
                 <p>© {new Date().getFullYear()} Prime Insurance Services. All Rights Reserved.</p>
-                <div className="flex space-x-6">
-                    <Link href="/privacy" className="hover:text-white">Privacy Policy</Link>
-                    <Link href="/terms" className="hover:text-white">Terms of Service</Link>
+                <div className="flex justify-center space-x-6 mt-4">
+                    <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+                    <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
                 </div>
             </div>
         </footer>

@@ -24,7 +24,7 @@ export default async function AdminConsultationsPage() {
     const serializedConsultations = JSON.parse(JSON.stringify(consultations));
 
     return (
-        <div className="p-8">
+        <div className="p-4 md:p-8">
             <div className="mb-8 flex justify-between items-center">
                 <div>
                     <h1 className="text-3xl font-bold text-slate-900">Consultation Requests</h1>

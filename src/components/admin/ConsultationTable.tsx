@@ -51,10 +51,6 @@ export default function ConsultationTable({ initialData }: Props) {
                 method: "PATCH",
                 headers: {
                     "Content-Type": "application/json",
-                    // In a real app, we'd use the session cookie, 
-                    // and our API should check for that cookie if the ADMIN_API_KEY isn't provided.
-                    // For this simple implementation, the API route is currently checking for ADMIN_API_KEY.
-                    // I will update the API route to also check the admin_session cookie.
                 },
                 body: JSON.stringify({ id, status: newStatus }),
             });
@@ -74,7 +70,7 @@ export default function ConsultationTable({ initialData }: Props) {
     return (
         <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
             {/* Filters */}
-            <div className="p-6 border-b border-slate-100 bg-slate-50/50 flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div className="p-4 md:p-6 border-b border-slate-100 bg-slate-50/50 flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div className="relative flex-1 max-w-md">
                     <span className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -86,16 +82,16 @@ export default function ConsultationTable({ initialData }: Props) {
                         placeholder="Search by name, email, or hospital..."
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
-                        className="w-full pl-10 pr-4 py-2 bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition-all"
+                        className="w-full pl-10 pr-4 py-2 bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition-all text-sm md:text-base"
                     />
                 </div>
 
                 <div className="flex items-center space-x-3">
-                    <label className="text-sm font-medium text-slate-600">Filter by Status:</label>
+                    <label className="text-xs md:text-sm font-medium text-slate-600 shrink-0">Filter by Status:</label>
                     <select
                         value={statusFilter}
                         onChange={(e) => setStatusFilter(e.target.value)}
-                        className="px-4 py-2 bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition-all"
+                        className="w-full md:w-auto px-4 py-2 bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 outline-none transition-all text-sm"
                     >
                         <option value="all">All Statuses</option>
                         <option value="pending">Pending</option>
@@ -106,8 +102,8 @@ export default function ConsultationTable({ initialData }: Props) {
                 </div>
             </div>
 
-            {/* Table */}
-            <div className="overflow-x-auto">
+            {/* Desktop Table View */}
+            <div className="hidden md:block overflow-x-auto">
                 <table className="w-full text-left border-collapse">
                     <thead>
                         <tr className="bg-slate-50 text-slate-500 text-xs font-semibold uppercase tracking-wider">
@@ -175,9 +171,68 @@ export default function ConsultationTable({ initialData }: Props) {
                 </table>
             </div>
 
+            {/* Mobile Card View */}
+            <div className="md:hidden divide-y divide-slate-100">
+                {filteredData.length > 0 ? (
+                    filteredData.map((item) => (
+                        <div key={item._id} className="p-4 space-y-4">
+                            <div className="flex justify-between items-start">
+                                <div className="flex-1 min-w-0 pr-4">
+                                    <div className="font-bold text-slate-900 truncate">{item.name}</div>
+                                    <div className="text-xs text-slate-500 truncate">{item.hospitalName}</div>
+                                </div>
+                                <span className={`px-2 py-0.5 rounded-full text-[10px] font-black border uppercase shrink-0 ${statusColors[item.status]}`}>
+                                    {item.status}
+                                </span>
+                            </div>
+
+                            <div className="grid grid-cols-2 gap-4 text-xs">
+                                <div>
+                                    <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Service</p>
+                                    <p className="text-slate-700 font-bold">{item.service}</p>
+                                </div>
+                                <div>
+                                    <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Location</p>
+                                    <p className="text-slate-700 font-bold">{item.district}, {item.state}</p>
+                                </div>
+                                <div>
+                                    <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Contact</p>
+                                    <p className="text-slate-700 font-bold">{item.phone}</p>
+                                </div>
+                                <div>
+                                    <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Date</p>
+                                    <p className="text-slate-700 font-bold" suppressHydrationWarning>
+                                        {new Date(item.createdAt).toLocaleDateString()}
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div className="pt-2">
+                                <label className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Update Status</label>
+                                <select
+                                    disabled={updatingId === item._id}
+                                    value={item.status}
+                                    onChange={(e) => handleStatusChange(item._id, e.target.value)}
+                                    className="w-full text-sm bg-slate-50 border border-slate-200 rounded-xl px-4 py-2 outline-none focus:ring-2 focus:ring-blue-500 transition-all disabled:opacity-50 font-bold"
+                                >
+                                    <option value="pending">Mark Pending</option>
+                                    <option value="contacted">Mark Contacted</option>
+                                    <option value="completed">Mark Completed</option>
+                                    <option value="cancelled">Mark Cancelled</option>
+                                </select>
+                            </div>
+                        </div>
+                    ))
+                ) : (
+                    <div className="px-6 py-12 text-center text-slate-500">
+                        No requests found.
+                    </div>
+                )}
+            </div>
+
             {/* Pagination Placeholder */}
-            <div className="px-6 py-4 border-t border-slate-100 bg-slate-50/50 flex items-center justify-between">
-                <p className="text-sm text-slate-500">
+            <div className="px-6 py-4 border-t border-slate-100 bg-slate-50/50">
+                <p className="text-sm text-slate-500 text-center md:text-left">
                     Showing <span className="font-medium text-slate-900">{filteredData.length}</span> results
                 </p>
             </div>
