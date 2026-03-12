@@ -47,6 +47,24 @@ export async function POST(request: NextRequest) {
         await connectDB();
 
         const body = await request.json();
+        const { name, hospitalName, location, rating, serviceUsed, reviewTitle, reviewText, email } = body;
+
+        // Validation
+        const errors: any = {};
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}$/;
+
+        if (!name || name.trim().length < 2) errors.name = "Full name is required (min 2 characters).";
+        if (!email || !emailRegex.test(email)) errors.email = "A valid email address is required.";
+        if (!hospitalName || hospitalName.trim().length < 3) errors.hospitalName = "Hospital name is required.";
+        if (!location || !location.trim()) errors.location = "Location is required.";
+        if (!rating || rating < 1 || rating > 5) errors.rating = "Rating must be between 1 and 5.";
+        if (!serviceUsed) errors.serviceUsed = "Service used is required.";
+        if (!reviewTitle || reviewTitle.trim().length < 5) errors.reviewTitle = "Review title is required (min 5 characters).";
+        if (!reviewText || reviewText.trim().length < 10) errors.reviewText = "Review text is required (min 10 characters).";
+
+        if (Object.keys(errors).length > 0) {
+            return NextResponse.json({ errors }, { status: 400 });
+        }
 
         const review = await Review.create({
             name: body.name,

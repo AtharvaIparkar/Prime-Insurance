@@ -16,11 +16,74 @@ export default function ReviewForm() {
         email: '',
     });
 
+    const [errors, setErrors] = useState<Record<string, string>>({});
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitted, setSubmitted] = useState(false);
 
+    const validateField = (name: string, value: any): string => {
+        switch (name) {
+            case 'name':
+                if (!value.trim()) return 'Full name is required.';
+                if (value.trim().length < 2) return 'Name must be at least 2 characters.';
+                return '';
+            case 'email':
+                const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}$/;
+                if (!value.trim()) return 'Email is required.';
+                if (!emailRegex.test(value)) return 'Please enter a valid email address.';
+                return '';
+            case 'hospitalName':
+                if (!value.trim()) return 'Hospital name is required.';
+                if (value.trim().length < 3) return 'Hospital name must be at least 3 characters.';
+                return '';
+            case 'location':
+                if (!value.trim()) return 'Location is required.';
+                return '';
+            case 'serviceUsed':
+                if (!value) return 'Please select a service.';
+                return '';
+            case 'reviewTitle':
+                if (!value.trim()) return 'Review title is required.';
+                if (value.trim().length < 5) return 'Title must be at least 5 characters.';
+                return '';
+            case 'reviewText':
+                if (!value.trim()) return 'Feedback text is required.';
+                if (value.trim().length < 10) return 'Feedback must be at least 10 characters.';
+                return '';
+            default:
+                return '';
+        }
+    };
+
+    const handleChange = (name: string, value: any) => {
+        setFormData(prev => ({ ...prev, [name]: value }));
+        
+        const error = validateField(name, value);
+        setErrors(prev => {
+            const next = { ...prev };
+            if (error) {
+                next[name] = error;
+            } else {
+                delete next[name];
+            }
+            return next;
+        });
+    };
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        
+        // Final validation check
+        const newErrors: Record<string, string> = {};
+        Object.keys(formData).forEach(key => {
+            const error = validateField(key, formData[key as keyof typeof formData]);
+            if (error) newErrors[key] = error;
+        });
+
+        if (Object.keys(newErrors).length > 0) {
+            setErrors(newErrors);
+            return;
+        }
+
         setIsSubmitting(true);
 
         try {
@@ -72,12 +135,12 @@ export default function ReviewForm() {
                             </label>
                             <input
                                 type="text"
-                                required
                                 placeholder="Ex: Dr. Amit Sharma"
                                 value={formData.name}
-                                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                                className="w-full bg-[#F9FAFB] border border-[#D1D9E6] p-5 rounded-2xl focus:outline-none focus:border-[#2563EB] transition-colors text-[#2872A1] font-bold placeholder:text-slate-300"
+                                onChange={(e) => handleChange('name', e.target.value)}
+                                className={`w-full bg-[#F9FAFB] border ${errors.name ? 'border-red-400' : 'border-[#D1D9E6]'} p-5 rounded-2xl focus:outline-none focus:border-[#2563EB] transition-colors text-[#2872A1] font-bold placeholder:text-slate-300`}
                             />
+                            {errors.name && <p className="mt-2 text-red-500 text-[10px] font-bold uppercase tracking-tight">{errors.name}</p>}
                         </div>
 
                         {/* Email */}
@@ -87,12 +150,12 @@ export default function ReviewForm() {
                             </label>
                             <input
                                 type="email"
-                                required
                                 placeholder="amit@hospital.com"
                                 value={formData.email}
-                                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                                className="w-full bg-[#F9FAFB] border border-[#D1D9E6] p-5 rounded-2xl focus:outline-none focus:border-[#2563EB] transition-colors text-[#2872A1] font-bold placeholder:text-slate-300"
+                                onChange={(e) => handleChange('email', e.target.value)}
+                                className={`w-full bg-[#F9FAFB] border ${errors.email ? 'border-red-400' : 'border-[#D1D9E6]'} p-5 rounded-2xl focus:outline-none focus:border-[#2563EB] transition-colors text-[#2872A1] font-bold placeholder:text-slate-300`}
                             />
+                            {errors.email && <p className="mt-2 text-red-500 text-[10px] font-bold uppercase tracking-tight">{errors.email}</p>}
                         </div>
                     </div>
 
@@ -104,12 +167,12 @@ export default function ReviewForm() {
                             </label>
                             <input
                                 type="text"
-                                required
                                 placeholder="Ex: LifeCare Hospital"
                                 value={formData.hospitalName}
-                                onChange={(e) => setFormData({ ...formData, hospitalName: e.target.value })}
-                                className="w-full bg-[#F9FAFB] border border-[#D1D9E6] p-5 rounded-2xl focus:outline-none focus:border-[#2563EB] transition-colors text-[#2872A1] font-bold placeholder:text-slate-300"
+                                onChange={(e) => handleChange('hospitalName', e.target.value)}
+                                className={`w-full bg-[#F9FAFB] border ${errors.hospitalName ? 'border-red-400' : 'border-[#D1D9E6]'} p-5 rounded-2xl focus:outline-none focus:border-[#2563EB] transition-colors text-[#2872A1] font-bold placeholder:text-slate-300`}
                             />
+                            {errors.hospitalName && <p className="mt-2 text-red-500 text-[10px] font-bold uppercase tracking-tight">{errors.hospitalName}</p>}
                         </div>
 
                         {/* Location */}
@@ -119,12 +182,12 @@ export default function ReviewForm() {
                             </label>
                             <input
                                 type="text"
-                                required
                                 value={formData.location}
-                                onChange={(e) => setFormData({ ...formData, location: e.target.value })}
+                                onChange={(e) => handleChange('location', e.target.value)}
                                 placeholder="Pune, Maharashtra"
-                                className="w-full bg-[#F9FAFB] border border-[#D1D9E6] p-5 rounded-2xl focus:outline-none focus:border-[#2563EB] transition-colors text-[#2872A1] font-bold placeholder:text-slate-300"
+                                className={`w-full bg-[#F9FAFB] border ${errors.location ? 'border-red-400' : 'border-[#D1D9E6]'} p-5 rounded-2xl focus:outline-none focus:border-[#2563EB] transition-colors text-[#2872A1] font-bold placeholder:text-slate-300`}
                             />
+                            {errors.location && <p className="mt-2 text-red-500 text-[10px] font-bold uppercase tracking-tight">{errors.location}</p>}
                         </div>
                     </div>
 
@@ -140,7 +203,7 @@ export default function ReviewForm() {
                                     <button
                                         key={star}
                                         type="button"
-                                        onClick={() => setFormData({ ...formData, rating: star })}
+                                        onClick={() => handleChange('rating', star)}
                                         className={`text-3xl transition-transform active:scale-90 ${star <= formData.rating ? 'text-yellow-400' : 'text-slate-200'}`}
                                     >
                                         ★
@@ -155,10 +218,9 @@ export default function ReviewForm() {
                                 Service Provided <span className="text-red-500">*</span>
                             </label>
                             <select
-                                required
                                 value={formData.serviceUsed}
-                                onChange={(e) => setFormData({ ...formData, serviceUsed: e.target.value })}
-                                className="w-full bg-[#F9FAFB] border border-[#D1D9E6] p-5 rounded-2xl focus:outline-none focus:border-[#2563EB] transition-colors text-[#1E293B] font-bold h-[66px]"
+                                onChange={(e) => handleChange('serviceUsed', e.target.value)}
+                                className={`w-full bg-[#F9FAFB] border ${errors.serviceUsed ? 'border-red-400' : 'border-[#D1D9E6]'} p-5 rounded-2xl focus:outline-none focus:border-[#2563EB] transition-colors text-[#1E293B] font-bold h-[66px]`}
                             >
                                 <option value="">Select Service</option>
                                 <option value="Hospital Empanelment">Hospital Empanelment</option>
@@ -167,6 +229,7 @@ export default function ReviewForm() {
                                 <option value="TPA & Insurance Support">TPA & Insurance Support</option>
                                 <option value="IT Solutions">IT Solutions</option>
                             </select>
+                            {errors.serviceUsed && <p className="mt-2 text-red-500 text-[10px] font-bold uppercase tracking-tight">{errors.serviceUsed}</p>}
                         </div>
                     </div>
 
@@ -177,12 +240,12 @@ export default function ReviewForm() {
                         </label>
                         <input
                             type="text"
-                            required
                             value={formData.reviewTitle}
-                            onChange={(e) => setFormData({ ...formData, reviewTitle: e.target.value })}
+                            onChange={(e) => handleChange('reviewTitle', e.target.value)}
                             placeholder="Summarize your experience..."
-                            className="w-full bg-[#F9FAFB] border border-[#D1D9E6] p-5 rounded-2xl focus:outline-none focus:border-[#2563EB] transition-colors text-[#1E293B] font-bold placeholder:text-slate-300"
+                            className={`w-full bg-[#F9FAFB] border ${errors.reviewTitle ? 'border-red-400' : 'border-[#D1D9E6]'} p-5 rounded-2xl focus:outline-none focus:border-[#2563EB] transition-colors text-[#1E293B] font-bold placeholder:text-slate-300`}
                         />
+                        {errors.reviewTitle && <p className="mt-2 text-red-500 text-[10px] font-bold uppercase tracking-tight">{errors.reviewTitle}</p>}
                     </div>
 
                     {/* Review Text */}
@@ -191,13 +254,12 @@ export default function ReviewForm() {
                             Detailed Feedback <span className="text-red-500">*</span>
                         </label>
                         <textarea
-                            required
-                            rows={5}
                             value={formData.reviewText}
-                            onChange={(e) => setFormData({ ...formData, reviewText: e.target.value })}
+                            onChange={(e) => handleChange('reviewText', e.target.value)}
                             placeholder="Tell us more about your transformation journey with Prime..."
-                            className="w-full bg-[#F9FAFB] border border-[#D1D9E6] p-5 rounded-2xl focus:outline-none focus:border-[#2563EB] transition-colors text-[#1E293B] font-bold placeholder:text-slate-300 resize-none"
+                            className={`w-full bg-[#F9FAFB] border ${errors.reviewText ? 'border-red-400' : 'border-[#D1D9E6]'} p-5 rounded-2xl focus:outline-none focus:border-[#2563EB] transition-colors text-[#1E293B] font-bold placeholder:text-slate-300 resize-none`}
                         />
+                        {errors.reviewText && <p className="mt-2 text-red-500 text-[10px] font-bold uppercase tracking-tight">{errors.reviewText}</p>}
                     </div>
 
                     {/* Recommendation */}

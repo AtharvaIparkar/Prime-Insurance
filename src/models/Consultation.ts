@@ -36,7 +36,7 @@ const ConsultationSchema = new Schema<IConsultation>(
             trim: true,
             lowercase: true,
             match: [
-                /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+                /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}$/,
                 "Please provide a valid email address",
             ],
         },
@@ -46,8 +46,8 @@ const ConsultationSchema = new Schema<IConsultation>(
             required: [true, "Phone number is required"],
             trim: true,
             match: [
-                /^[\d\s+\-()]{7,20}$/,
-                "Please provide a valid phone number",
+                /^[6-9]\d{9}$/,
+                "Please provide a valid 10-digit phone number",
             ],
         },
 

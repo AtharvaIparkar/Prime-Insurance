@@ -42,6 +42,7 @@ async function connectDB(): Promise<typeof mongoose> {
             maxPoolSize: 10,             // Max number of sockets in the connection pool
             serverSelectionTimeoutMS: 5000,  // Timeout after 5s if can't find server
             socketTimeoutMS: 45000,      // Close sockets after 45s of inactivity
+            family: 4,                   // Force IPv4 to avoid ECONNRESET on some networks
         };
 
         cached.promise = mongoose

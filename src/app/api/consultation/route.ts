@@ -93,9 +93,9 @@ export async function POST(request: NextRequest) {
         if (
             !phone ||
             typeof phone !== "string" ||
-            !validator.isMobilePhone(phone.replace(/[\s\-()]/g, ""), "any")
+            !/^[6-9]\d{9}$/.test(phone.replace(/[\s\-()]/g, ""))
         ) {
-            errors.phone = "A valid phone number is required.";
+            errors.phone = "A valid 10-digit phone number is required.";
         }
 
         const validServices = [
@@ -125,8 +125,13 @@ export async function POST(request: NextRequest) {
             errors.pincode = "A valid 6-digit pincode is required (cannot start with 0).";
         }
 
-        if (message && typeof message === "string" && message.length > 2000) {
-            errors.message = "Message must be less than 2000 characters.";
+        if (preferredDate) {
+            const selectedDate = new Date(preferredDate);
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+            if (selectedDate < today) {
+                errors.preferredDate = "Consultation date cannot be in the past.";
+            }
         }
 
         if (Object.keys(errors).length > 0) {

@@ -43,49 +43,64 @@ export default function ContactPage() {
     const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
     const [statusMessage, setStatusMessage] = useState("");
 
-    // ── Client-side validation ──────────────────────────────────────────────
+    function validateField(name: string, value: string): string {
+        switch (name) {
+            case "name":
+                if (!value.trim()) return "Full name is required.";
+                if (value.trim().length < 2) return "Full name must be at least 2 characters.";
+                return "";
+            case "email":
+                const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}$/;
+                if (!value.trim()) return "Email address is required.";
+                if (!emailRegex.test(value)) return "A valid email address is required (e.g. name@example.com).";
+                return "";
+            case "phone":
+                const phoneRegex = /^[6-9]\d{9}$/;
+                if (!value.trim()) return "Phone number is required.";
+                if (!phoneRegex.test(value)) return "A valid 10-digit phone number is required.";
+                return "";
+            case "service":
+                if (!value || value === "Select Service Required") return "Please select a service.";
+                return "";
+            case "hospitalName":
+                if (!value.trim()) return "Hospital name is required.";
+                if (value.trim().length < 3) return "Hospital name must be at least 3 characters.";
+                return "";
+            case "state":
+                if (!value) return "Please select a state.";
+                return "";
+            case "district":
+                if (!value) return "Please select a district.";
+                return "";
+            case "pincode":
+                const pincodeRegex = /^[1-9]\d{5}$/;
+                if (!value.trim()) return "Pincode is required.";
+                if (!pincodeRegex.test(value)) return "A valid 6-digit pincode is required (cannot start with 0).";
+                return "";
+            case "message":
+                if (value.length > 2000) return "Message must be less than 2000 characters.";
+                return "";
+            case "preferredDate":
+                if (value) {
+                    const selectedDate = new Date(value);
+                    const today = new Date();
+                    today.setHours(0, 0, 0, 0);
+                    if (selectedDate < today) {
+                        return "Please select today or a future date.";
+                    }
+                }
+                return "";
+            default:
+                return "";
+        }
+    }
+
     function validateForm(): FormErrors {
         const newErrors: FormErrors = {};
-
-        if (!formData.name.trim() || formData.name.trim().length < 2) {
-            newErrors.name = "Full name is required (min 2 characters).";
-        }
-
-        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-        if (!formData.email.trim() || !emailRegex.test(formData.email)) {
-            newErrors.email = "A valid email address is required.";
-        }
-
-        const phoneRegex = /^[\d\s+\-()]{7,20}$/;
-        if (!formData.phone.trim() || !phoneRegex.test(formData.phone)) {
-            newErrors.phone = "A valid phone number is required.";
-        }
-
-        if (!formData.service || formData.service === "Select Service Required") {
-            newErrors.service = "Please select a service.";
-        }
-
-        if (!formData.hospitalName.trim() || formData.hospitalName.trim().length < 3) {
-            newErrors.hospitalName = "Hospital name is required (min 3 characters).";
-        }
-
-        if (!formData.state) {
-            newErrors.state = "Please select a state.";
-        }
-
-        if (!formData.district) {
-            newErrors.district = "Please select a district.";
-        }
-
-        const pincodeRegex = /^[1-9]\d{5}$/;
-        if (!formData.pincode.trim() || !pincodeRegex.test(formData.pincode)) {
-            newErrors.pincode = "A valid 6-digit pincode is required (cannot start with 0).";
-        }
-
-        if (formData.message.length > 2000) {
-            newErrors.message = "Message must be less than 2000 characters.";
-        }
-
+        Object.keys(formData).forEach((key) => {
+            const error = validateField(key, formData[key as keyof FormData]);
+            if (error) newErrors[key] = error;
+        });
         return newErrors;
     }
 
@@ -94,16 +109,27 @@ export default function ContactPage() {
         e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
     ) {
         const { name, value } = e.target;
-        setFormData((prev) => ({ ...prev, [name]: value }));
+        let newValue = value;
 
-        // Clear error for this field when user starts typing
-        if (errors[name]) {
-            setErrors((prev) => {
-                const next = { ...prev };
-                delete next[name];
-                return next;
-            });
+        // Custom handling for phone to restrict to 10 digits and only numbers
+        if (name === "phone") {
+            newValue = value.replace(/\D/g, "").slice(0, 10);
+            setFormData((prev) => ({ ...prev, [name]: newValue }));
+        } else {
+            setFormData((prev) => ({ ...prev, [name]: value }));
         }
+
+        // Real-time validation
+        const fieldError = validateField(name, newValue);
+        setErrors((prev) => {
+            const next = { ...prev };
+            if (fieldError) {
+                next[name] = fieldError;
+            } else {
+                delete next[name];
+            }
+            return next;
+        });
     }
 
     // ── Handle state change ─────────────────────────────────────────────────
@@ -115,15 +141,19 @@ export default function ContactPage() {
             district: "", // Reset district when state changes
         }));
 
-        // Clear state and district errors
-        if (errors.state || errors.district) {
-            setErrors((prev) => {
-                const next = { ...prev };
+        // Real-time validation for state
+        const stateError = validateField("state", stateCode);
+        setErrors((prev) => {
+            const next = { ...prev };
+            if (stateError) {
+                next.state = stateError;
+            } else {
                 delete next.state;
-                delete next.district;
-                return next;
-            });
-        }
+            }
+            // Always clear district error when state changes since district is reset
+            delete next.district;
+            return next;
+        });
     }
 
     // ── Handle form submission ──────────────────────────────────────────────
@@ -311,7 +341,8 @@ export default function ContactPage() {
                                                             name="phone"
                                                             value={formData.phone}
                                                             onChange={handleChange}
-                                                            placeholder="Phone Number"
+                                                            placeholder="10-Digit Phone Number"
+                                                            maxLength={10}
                                                             className={`w-full bg-white/10 border ${errors.phone ? "border-red-400" : "border-white/20"} p-5 rounded-2xl focus:outline-none focus:border-[#2563EB] transition-colors text-white font-bold placeholder:text-[#D1D9E6]/50`}
                                                         />
                                                         {errors.phone && <p className="mt-2 text-red-400 text-xs font-bold">{errors.phone}</p>}
@@ -321,9 +352,11 @@ export default function ContactPage() {
                                                             type="date"
                                                             name="preferredDate"
                                                             value={formData.preferredDate}
+                                                            min={new Date().toISOString().split("T")[0]}
                                                             onChange={handleChange}
-                                                            className="w-full bg-white/10 border border-white/20 p-5 rounded-2xl focus:outline-none focus:border-[#2563EB] transition-colors text-white font-bold placeholder:text-[#D1D9E6]/50"
+                                                            className={`w-full bg-white/10 border ${errors.preferredDate ? "border-red-400" : "border-white/20"} p-5 rounded-2xl focus:outline-none focus:border-[#2563EB] transition-colors text-white font-bold placeholder:text-[#D1D9E6]/50`}
                                                         />
+                                                        {errors.preferredDate && <p className="mt-2 text-red-400 text-xs font-bold">{errors.preferredDate}</p>}
                                                     </div>
                                                 </div>
 
